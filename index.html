@@ -5,16 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aman Patel | Sr. DevOps Engineer</title>
 
-  <!-- 🔹 Favicon -->
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="https://cdn.amansdlc.com/aiwithaman.png">
 
-  <!-- ✅ Font Awesome (latest official CDN) -->
+  <!-- Font Awesome for icons -->
   <link 
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
     crossorigin="anonymous"
-    referrerpolicy="no-referrer"
   />
 
   <style>
@@ -48,6 +46,7 @@
       background: var(--bg-color);
       color: var(--text-color);
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       height: 100vh;
@@ -64,14 +63,8 @@
     }
 
     @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     img {
@@ -82,12 +75,17 @@
       border: 3px solid var(--link-color);
       margin-bottom: 1.2rem;
       box-shadow: 0 0 12px rgba(37, 99, 235, 0.3);
+      transition: all 0.4s ease;
+    }
+
+    img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(37, 99, 235, 0.6);
     }
 
     h1 {
       font-size: 1.8rem;
       margin-bottom: 0.4rem;
-      color: var(--text-color);
     }
 
     h2 {
@@ -101,7 +99,6 @@
       color: var(--link-color);
       font-weight: 500;
       margin-bottom: 1.8rem;
-      min-height: 25px;
       overflow: hidden;
       white-space: nowrap;
       border-right: 3px solid var(--link-color);
@@ -114,7 +111,6 @@
       60% { width: 100%; }
       100% { width: 0; }
     }
-
     @keyframes blink {
       50% { border-color: transparent; }
     }
@@ -129,11 +125,10 @@
     a {
       color: var(--link-color);
       text-decoration: none;
-      font-weight: 500;
-      transition: 0.3s;
       display: flex;
       align-items: center;
       gap: 0.4rem;
+      transition: 0.3s;
     }
 
     a:hover {
@@ -141,7 +136,6 @@
       text-decoration: underline;
     }
 
-    /* ✨ Social Icon Hover Effect */
     .social-links i {
       font-size: 1.5rem;
       transition: all 0.3s ease;
@@ -157,6 +151,27 @@
       margin-top: 1.5rem;
       color: var(--subtext-color);
       font-size: 0.95rem;
+    }
+
+    /* Footer */
+    footer {
+      position: fixed;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      color: var(--subtext-color);
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: var(--link-color);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    footer a:hover {
+      color: var(--hover-color);
+      text-decoration: underline;
     }
 
     .theme-toggle {
@@ -201,11 +216,16 @@
     <p class="email">📧 amanpatel.itofficial@gmail.com</p>
   </div>
 
+  <!-- Footer -->
+  <footer>
+    © 2025 Aman Patel | Built & Deployed with ☁️ AWS Cloud
+  </footer>
+
   <script>
     const body = document.body;
     const button = document.querySelector(".theme-toggle");
 
-    // 🌗 Detect System Theme on Load
+    // Theme setup
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     if (prefersDark) {
       body.setAttribute("data-theme", "dark");

@@ -1,4 +1,4 @@
-name: Deploy Website to aws S3 with CloudFront
+name: Deploy Website on aws S3 with CloudFront
 
 on:
   push:

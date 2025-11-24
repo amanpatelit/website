@@ -28,9 +28,7 @@
       --border: rgba(255, 255, 255, 0.08);
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -46,7 +44,6 @@
       overflow-x: hidden;
     }
 
-    /* Theme toggle button */
     .theme-toggle {
       position: fixed;
       top: 16px;
@@ -106,31 +103,19 @@
       transition: border 0.4s ease;
     }
 
-    h1 {
-      font-size: 1.4rem;
-      margin: 0.2rem 0 0.15rem;
-    }
-
-    h2 {
-      font-size: 0.95rem;
-      color: var(--muted);
-      margin: 0 0 14px;
-    }
+    h1 { font-size: 1.4rem; margin: 0.2rem 0 0.15rem; }
+    h2 { font-size: 0.95rem; color: var(--muted); margin: 0 0 14px; }
 
     .tagline-wrap {
       display: flex;
       justify-content: center;
       margin: 10px 0 20px;
-      padding: 0 6px;
     }
 
     .tagline {
       font-size: 0.9rem;
       font-weight: 500;
-      line-height: 1.4;
       transition: color 0.4s ease, text-shadow 0.4s ease;
-      position: relative;
-      word-break: keep-all;
     }
 
     .tagline::after {
@@ -145,34 +130,35 @@
       top: 2px;
     }
 
-    @keyframes blink {
-      50% { opacity: 0; }
-    }
+    @keyframes blink { 50% { opacity: 0; } }
 
+    /* Social icons */
     .social {
       display: flex;
       justify-content: center;
-      gap: 16px;
+      gap: 18px;
       margin: 12px 0 14px;
       flex-wrap: wrap;
     }
 
     .social a {
-      font-size: 1.35rem;
-      color: var(--brand);
+      font-size: 1.6rem;
       transition: 0.25s;
     }
 
-    .social a:hover {
-      transform: scale(1.15);
-      color: #1d4ed8;
-    }
+    /* LinkedIn */
+    .social a[aria-label="LinkedIn"] { color: #0A66C2; }
+    .social a[aria-label="LinkedIn"]:hover { color: #004182; transform: scale(1.15); }
 
-    /* Newsletter button */
-    .newsletter {
-      margin-top: 10px;
-      margin-bottom: 14px;
-    }
+    /* GitHub */
+    .social a[aria-label="GitHub"] { color: #171515; }
+    .social a[aria-label="GitHub"]:hover { color: #000000; transform: scale(1.15); }
+
+    /* YouTube */
+    .social a[aria-label="YouTube"] { color: #FF0000; }
+    .social a[aria-label="YouTube"]:hover { color: #cc0000; transform: scale(1.15); }
+
+    .newsletter { margin-top: 10px; margin-bottom: 14px; }
 
     .newsletter-btn {
       display: inline-block;
@@ -186,9 +172,7 @@
       transition: background 0.3s ease, transform 0.2s ease;
     }
 
-    .newsletter-btn i {
-      margin-right: 6px;
-    }
+    .newsletter-btn i { margin-right: 6px; }
 
     .newsletter-btn:hover {
       background: #1d4ed8;
@@ -199,16 +183,8 @@
       color: var(--muted);
       font-size: 0.88rem;
       display: flex;
-      align-items: center;
       justify-content: center;
       gap: 6px;
-      flex-wrap: wrap;
-      text-align: center;
-      word-break: break-all;
-    }
-
-    .glow {
-      text-shadow: 0 0 12px currentColor, 0 0 18px currentColor;
     }
 
     footer {
@@ -217,35 +193,14 @@
       font-size: 0.8rem;
       color: var(--muted);
       padding: 15px 10px 25px;
-      line-height: 1.6;
-      border-top: 1px solid var(--border);
       margin-top: auto;
-      transition: color 0.5s ease, border-color 0.5s ease;
-      word-wrap: break-word;
+      border-top: 1px solid var(--border);
     }
 
-    footer a {
-      color: var(--brand);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.4s ease;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-      color: #1d4ed8;
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 480px) {
-      h1 { font-size: 1.3rem; }
-      h2 { font-size: 0.9rem; }
-      .tagline { font-size: 0.85rem; }
-      .social a { font-size: 1.2rem; }
-      .theme-toggle { padding: 6px 12px; font-size: 0.85rem; }
-    }
+    footer a { color: var(--brand); }
   </style>
 </head>
+
 <body>
   <button class="theme-toggle" id="themeToggle">🌙 Dark</button>
 
@@ -262,15 +217,11 @@
       <div class="social">
         <a href="https://www.linkedin.com/in/amanpatelofficial/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
         <a href="https://github.com/amanpatelit" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.youtube.com/@amanpatelletscodeanddeploy" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
       </div>
 
-      <!-- Newsletter Subscribe Button -->
       <div class="newsletter">
-        <a 
-          href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7398812948757893120"
-          target="_blank"
-          class="newsletter-btn"
-        >
+        <a href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7398812948757893120" target="_blank" class="newsletter-btn">
           <i class="fa-solid fa-bell"></i> Subscribe to My Newsletter
         </a>
       </div>
@@ -284,11 +235,10 @@
 
   <footer>
     <p>Stay updated with the latest insights in <strong>Cloud, DevOps, and AI-driven Infrastructure</strong>.</p>
-    <p>Connect with me on <a href="https://www.linkedin.com/in/amanpatelofficial/" target="_blank">LinkedIn</a> · © 2025 Aman Patel</p>
+    <p>Connect on <a href="https://www.linkedin.com/in/amanpatelofficial/" target="_blank">LinkedIn</a> • © 2025 Aman Patel</p>
   </footer>
 
   <script>
-    // Theme Handling
     const themeToggle = document.getElementById("themeToggle");
     const userPref = localStorage.getItem("theme");
     const systemPrefDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -311,7 +261,6 @@
       }
     });
 
-    // Tagline Typing Effect
     const taglineEl = document.getElementById('tagline');
     const phrases = [
       { text: "Let’s code & deploy with AI", color: "#2563eb" },
@@ -325,8 +274,8 @@
       const { text, color } = phrases[p];
       taglineEl.style.color = color;
       taglineEl.textContent = text.slice(0, i);
-      let delay = deleting ? 55 : 95;
 
+      let delay = deleting ? 55 : 95;
       if (!deleting && i === text.length) {
         taglineEl.classList.add('glow');
         delay = 1100;
@@ -343,5 +292,6 @@
     }
     window.addEventListener('load', () => setTimeout(step, 400));
   </script>
+
 </body>
 </html>

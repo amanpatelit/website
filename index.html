@@ -100,24 +100,13 @@
       margin-bottom: 12px;
       border: 3px solid var(--brand);
       box-shadow: 0 0 14px rgba(37, 99, 235, 0.35);
-      transition: border 0.4s ease;
     }
 
     h1 { font-size: 1.4rem; margin: 0.2rem 0 0.15rem; }
     h2 { font-size: 0.95rem; color: var(--muted); margin: 0 0 14px; }
 
-    .tagline-wrap {
-      display: flex;
-      justify-content: center;
-      margin: 10px 0 20px;
-    }
-
-    .tagline {
-      font-size: 0.9rem;
-      font-weight: 500;
-      transition: color 0.4s ease, text-shadow 0.4s ease;
-    }
-
+    .tagline-wrap { display: flex; justify-content: center; margin: 10px 0 20px; }
+    .tagline { font-size: 0.9rem; font-weight: 500; }
     .tagline::after {
       content: "";
       display: inline-block;
@@ -132,34 +121,39 @@
 
     @keyframes blink { 50% { opacity: 0; } }
 
-    /* Social icons */
-    .social {
-      display: flex;
-      justify-content: center;
-      gap: 18px;
-      margin: 12px 0 14px;
-      flex-wrap: wrap;
-    }
+    .social { display: flex; justify-content: center; gap: 18px; margin: 12px 0 14px; flex-wrap: wrap; }
+    .social a { font-size: 1.6rem; transition: 0.25s; }
 
-    .social a {
-      font-size: 1.6rem;
-      transition: 0.25s;
-    }
-
-    /* LinkedIn */
     .social a[aria-label="LinkedIn"] { color: #0A66C2; }
     .social a[aria-label="LinkedIn"]:hover { color: #004182; transform: scale(1.15); }
 
-    /* GitHub */
     .social a[aria-label="GitHub"] { color: #171515; }
     .social a[aria-label="GitHub"]:hover { color: #000000; transform: scale(1.15); }
 
-    /* YouTube */
     .social a[aria-label="YouTube"] { color: #FF0000; }
     .social a[aria-label="YouTube"]:hover { color: #cc0000; transform: scale(1.15); }
 
-    .newsletter { margin-top: 10px; margin-bottom: 14px; }
+    /* Talks Section Styling */
+    .talks {
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+      text-align: left;
+    }
+    .talks h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .talks p {
+      margin: 0;
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
 
+    .newsletter { margin-top: 20px; margin-bottom: 14px; }
     .newsletter-btn {
       display: inline-block;
       background: var(--brand);
@@ -171,8 +165,6 @@
       text-decoration: none;
       transition: background 0.3s ease, transform 0.2s ease;
     }
-
-    .newsletter-btn i { margin-right: 6px; }
 
     .newsletter-btn:hover {
       background: #1d4ed8;
@@ -196,8 +188,6 @@
       margin-top: auto;
       border-top: 1px solid var(--border);
     }
-
-    footer a { color: var(--brand); }
   </style>
 </head>
 
@@ -206,6 +196,7 @@
 
   <div class="content">
     <div class="card">
+
       <img class="profile-img" src="https://cdn.amansdlc.com/aiwithaman.png" alt="Aman Patel">
       <h1>Aman Patel</h1>
       <h2>Sr. ML DevOps Engineer</h2>
@@ -220,6 +211,19 @@
         <a href="https://www.youtube.com/@amanpatelletscodeanddeploy" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
       </div>
 
+      <!-- Talks & Presentations Section -->
+      <div class="talks">
+        <h3>🎤 Talks & Presentations</h3>
+        <p>
+          I enjoy speaking about engineering, DevOps, AI-driven infrastructure, and career growth.
+          I’ve delivered sessions for companies, universities, and tech communities.
+          <br><br>
+          Invite me for a talk or workshop:
+          <br>
+          <strong style="color: var(--brand);">amanpatel.itofficial@gmail.com</strong>
+        </p>
+      </div>
+
       <div class="newsletter">
         <a href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7398812948757893120" target="_blank" class="newsletter-btn">
           <i class="fa-solid fa-bell"></i> Subscribe to My Newsletter
@@ -230,6 +234,7 @@
         <i class="fa-solid fa-envelope"></i>
         <span>amanpatel.itofficial@gmail.com</span>
       </div>
+
     </div>
   </div>
 
@@ -277,11 +282,9 @@
 
       let delay = deleting ? 55 : 95;
       if (!deleting && i === text.length) {
-        taglineEl.classList.add('glow');
         delay = 1100;
         deleting = true;
       } else if (deleting && i === 0) {
-        taglineEl.classList.remove('glow');
         deleting = false;
         p = (p + 1) % phrases.length;
         delay = 480;

@@ -87,7 +87,7 @@
     h1 { margin: 8px 0 4px; font-size: 1.4rem; }
     h2 { color: var(--muted); font-size: 0.95rem; margin: 0 0 14px; }
 
-    .tagline-wrap { height: 22px; margin-bottom: 16px; }
+    .tagline-wrap { height: 22px; margin-bottom: 18px; }
     .tagline {
       font-size: 0.9rem;
       font-weight: 500;
@@ -101,6 +101,7 @@
       margin-left: 4px;
       animation: blink 0.9s steps(2, start) infinite;
     }
+
     @keyframes blink { 50% { opacity: 0; } }
 
     .social {
@@ -123,16 +124,16 @@
       text-align: center;
     }
 
-    .talks-section h2 {
-      font-size: 1.8rem;
-      margin-bottom: 10px;
-      font-weight: 600;
+    .talks-icon {
+      font-size: 2.4rem;
+      color: #DB1F2F; /* REAL SYMBOL COLOR */
+      margin-bottom: 15px;
     }
 
-    .talks-icon {
-      font-size: 2.3rem;
-      color: var(--brand);
-      margin-bottom: 15px;
+    .talks-section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+      font-weight: 600;
     }
 
     .talks-text {
@@ -144,13 +145,13 @@
     }
 
     .talks-email {
-      margin-top: 14px;
       display: inline-block;
-      font-weight: 600;
+      margin-top: 15px;
+      font-size: 1rem;
       color: var(--brand);
+      font-weight: 600;
     }
 
-    /* Newsletter button */
     .newsletter-btn {
       display: inline-flex;
       align-items: center;
@@ -166,6 +167,7 @@
       transition: 0.25s ease;
       margin: 18px auto 12px;
     }
+
     .newsletter-btn:hover {
       background: #1d4ed8;
       transform: translateY(-2px);
@@ -179,6 +181,7 @@
       margin-top: 20px;
       border-top: 1px solid var(--border);
     }
+
     footer a { color: var(--brand); }
   </style>
 </head>
@@ -190,7 +193,7 @@
   <!-- Profile Card -->
   <div class="content">
     <div class="card">
-      <img src="https://cdn.amansdlc.com/aiwithaman.png" class="profile-img">
+      <img src="https://cdn.amansdlc.com/aiwithaman.png" class="profile-img" alt="Aman Patel">
 
       <h1>Aman Patel</h1>
       <h2>Sr. ML DevOps Engineer</h2>
@@ -200,9 +203,9 @@
       </div>
 
       <div class="social">
-        <a href="https://www.linkedin.com/in/amanpatelofficial/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="https://github.com/amanpatelit" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-        <a href="https://www.youtube.com/@amanpatelletscodeanddeploy" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://www.linkedin.com/in/amanpatelofficial/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/amanpatelit" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.youtube.com/@amanpatelletscodeanddeploy" target="_blank"><i class="fa-brands fa-youtube"></i></a>
       </div>
 
       <a href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7398812948757893120" 
@@ -257,7 +260,7 @@
       }
     };
 
-    // Typewriter tagline
+    // Typewriter
     const taglineEl = document.getElementById("tagline");
     const phrases = [
       { text: "Let’s code & deploy with AI", color: "#2563eb" },
@@ -265,6 +268,7 @@
       { text: "Empowering Cloud with DevOps.", color: "#d97706" },
       { text: "Where Infrastructure meets Intelligence.", color: "#9333ea" }
     ];
+
     let p = 0, i = 0, del = false;
 
     function type() {
@@ -279,6 +283,7 @@
 
       setTimeout(type, speed);
     }
+
     window.onload = () => setTimeout(type, 400);
   </script>
 

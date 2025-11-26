@@ -33,200 +33,113 @@
       font-family: "Poppins", system-ui, sans-serif;
       background: var(--bg);
       color: var(--text);
-      transition: background 0.4s ease, color 0.4s ease;
-    }
-
-    .theme-toggle {
-      position: fixed;
-      top: 16px;
-      right: 16px;
-      background: var(--card);
-      border: 2px solid var(--brand);
-      color: var(--brand);
-      border-radius: 999px;
-      padding: 8px 14px;
-      font-size: 0.9rem;
-      cursor: pointer;
-      font-weight: 500;
-      transition: all 0.25s ease;
-      box-shadow: 0 2px 10px var(--shadow);
-      z-index: 20;
-    }
-
-    .theme-toggle:hover {
-      background: var(--brand);
-      color: #fff;
-      transform: translateY(-1px);
     }
 
     .content {
       display: flex;
       justify-content: center;
-      padding: 60px 10px 20px;
+      padding: 60px 18px 20px;
     }
 
     .card {
       width: 100%;
-      max-width: 380px;
+      max-width: 420px;
       background: var(--card);
-      border-radius: 20px;
-      padding: 28px 24px;
+      border-radius: 22px;
+      padding: 32px 28px;
+      box-shadow: 0 20px 45px var(--shadow);
       text-align: center;
-      box-shadow: 0 18px 40px var(--shadow);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      opacity: 0;
-      transform: translateY(18px);
-      animation: cardFadeUp 0.7s ease-out forwards;
-      animation-delay: 0.15s;
-    }
-
-    .card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 22px 48px var(--shadow);
-    }
-
-    @keyframes cardFadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(18px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      border: 1px solid var(--border);
     }
 
     .profile-img {
-      width: 96px;
-      height: 96px;
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
       object-fit: cover;
       border: 3px solid var(--brand);
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
-    h1 { margin: 8px 0 4px; font-size: 1.4rem; }
-    h2 { color: var(--muted); font-size: 0.95rem; margin: 0 0 14px; }
+    h1 { font-size: 1.8rem; margin: 10px 0 4px; }
+    h2 { font-size: 1.05rem; margin: 0; color: var(--muted); }
 
-    .tagline-wrap { height: 22px; margin-bottom: 18px; }
-    .tagline {
-      font-size: 0.9rem;
-      font-weight: 500;
-    }
-    .tagline::after {
-      content: "";
-      width: 2px;
-      height: 1em;
-      background: currentColor;
-      display: inline-block;
-      margin-left: 4px;
-      animation: blink 0.9s steps(2, start) infinite;
-    }
-
-    @keyframes blink { 50% { opacity: 0; } }
-
-    .social {
-      display: flex;
-      justify-content: center;
-      gap: 18px;
-      margin-bottom: 16px;
-    }
+    .tagline-wrap { height: 26px; margin-top: 8px; }
 
     .social a {
       font-size: 1.6rem;
-      transition: transform 0.2s ease, filter 0.2s ease;
-    }
-
-    .social a:hover {
-      transform: translateY(-1px) scale(1.08);
-      filter: brightness(1.08);
-    }
-
-    /* --------------------------
-        FULL-WIDTH TALKS SECTION 
-    ---------------------------*/
-    .talks-section {
-      width: 100%;
-      padding: 60px 20px;
-      margin-top: 20px;
-      border-top: 1px solid var(--border);
-      text-align: center;
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
-    .talks-section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .talks-icon {
-      font-size: 2.4rem;
-      color: #DB1F2F; /* REAL MICROPHONE COLOR */
-      margin-bottom: 15px;
-      animation: micFloat 4s ease-in-out infinite;
-    }
-
-    @keyframes micFloat {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-4px); }
-    }
-
-    .talks-section h2 {
-      font-size: 1.8rem;
-      margin-bottom: 12px;
-      font-weight: 600;
-    }
-
-    .talks-text {
-      max-width: 650px;
-      margin: 0 auto;
-      font-size: 1rem;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .talks-email {
-      display: inline-block;
-      margin-top: 15px;
-      font-size: 1rem;
-      color: var(--brand);
-      font-weight: 600;
+      margin: 0 10px;
     }
 
     .newsletter-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
+      display: inline-block;
+      margin-top: 18px;
+      padding: 12px 18px;
       background: var(--brand);
       color: #fff;
-      padding: 10px 16px;
-      border-radius: 10px;
-      font-size: 0.88rem;
-      font-weight: 500;
       text-decoration: none;
-      box-shadow: 0 8px 18px rgba(37,99,235,0.35);
-      transition: transform 0.2s ease, box-shadow 0.25s ease, background 0.25s ease;
-      margin: 18px auto 12px;
+      border-radius: 10px;
+      font-weight: 500;
+      transition: 0.2s;
+    }
+    .newsletter-btn:hover {
+      opacity: 0.9;
     }
 
-    .newsletter-btn:hover {
-      background: #1d4ed8;
-      transform: translateY(-2px);
-      box-shadow: 0 10px 22px rgba(37,99,235,0.45);
+    .talks-section {
+      width: 100%;
+      padding: 70px 16px;
+      text-align: center;
+    }
+
+    .talks-section h2 {
+      font-size: 1.7rem;
+      margin-bottom: 14px;
+    }
+
+    .talks-text {
+      max-width: 700px;
+      margin: 0 auto 10px;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .talks-email {
+      font-weight: 600;
+      color: var(--brand);
+      font-size: 1.05rem;
     }
 
     footer {
+      padding: 40px 10px;
+      font-size: 0.9rem;
       text-align: center;
-      padding: 30px 10px;
-      font-size: 0.85rem;
       color: var(--muted);
-      margin-top: 20px;
-      border-top: 1px solid var(--border);
     }
 
-    footer a { color: var(--brand); }
+    .theme-toggle {
+      position: fixed;
+      top: 18px;
+      right: 18px;
+      background: var(--card);
+      border: 2px solid var(--brand);
+      color: var(--brand);
+      border-radius: 50px;
+      padding: 8px 16px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      font-weight: 600;
+      box-shadow: 0 2px 10px var(--shadow);
+      z-index: 20;
+      transition: 0.2s;
+    }
+    .theme-toggle:hover { opacity: 0.9; }
+
+    @media (min-width: 768px) {
+      .content { padding-top: 90px; }
+      .card { padding: 36px 32px; }
+    }
   </style>
 </head>
 
@@ -234,10 +147,9 @@
 
   <button class="theme-toggle" id="themeToggle">🌙 Dark</button>
 
-  <!-- Profile Card -->
   <div class="content">
     <div class="card">
-      <img src="https://cdn.amansdlc.com/aiwithaman.png" class="profile-img" alt="Aman Patel">
+      <img src="https://cdn.amansdlc.com/aiwithaman.png" class="profile-img">
 
       <h1>Aman Patel</h1>
       <h2>Sr. ML DevOps Engineer</h2>
@@ -246,115 +158,56 @@
         <span id="tagline" class="tagline"></span>
       </div>
 
-      <!-- REAL BRAND COLORS -->
       <div class="social">
-        <a href="https://www.linkedin.com/in/amanpatelofficial/" target="_blank" style="color:#0A66C2;">
-          <i class="fa-brands fa-linkedin"></i>
-        </a>
-
-        <a href="https://github.com/amanpatelit" target="_blank" style="color:#000000;">
-          <i class="fa-brands fa-github"></i>
-        </a>
-
-        <a href="https://www.youtube.com/@amanpatelletscodeanddeploy" target="_blank" style="color:#FF0000;">
-          <i class="fa-brands fa-youtube"></i>
-        </a>
+        <a href="https://www.linkedin.com/in/amanpatelofficial/" style="color:#0A66C2;"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/amanpatelit" style="color:#000000;"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.youtube.com/@amanpatelletscodeanddeploy" style="color:#FF0000;"><i class="fa-brands fa-youtube"></i></a>
       </div>
 
-      <a href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7398812948757893120" 
-         class="newsletter-btn" target="_blank">
+      <a href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7398812948757893120"
+        class="newsletter-btn">
         <i class="fa-solid fa-bell"></i> Subscribe to My Newsletter
       </a>
-
     </div>
   </div>
 
-  <!-- Full-Width Talks Section -->
-  <section class="talks-section" id="talksSection">
-    <i class="fa-solid fa-microphone-lines talks-icon"></i>
+  <section class="talks-section">
+    <i class="fa-solid fa-microphone-lines" style="font-size:2.4rem;color:var(--brand);"></i>
     <h2>Talks & Presentations</h2>
 
     <p class="talks-text">
-      I speak about Engineering, DevOps, Cloud Infrastructure, AI-driven automation,
-      and Career Growth. I have delivered sessions for companies, universities, and
-      global tech communities.
-      <br><br>
-      If you'd like to organize a tech talk, workshop, or guest session, reach out:
+      I deliver sessions on DevOps, Cloud Infrastructure, AI-driven automation, platform engineering,
+      and modern career strategies. For workshops, webinars, or speaking engagements:
     </p>
 
     <span class="talks-email">amanpatel.itofficial@gmail.com</span>
   </section>
 
   <footer>
-    Stay updated with insights in <strong>Cloud, DevOps & AI-powered Infrastructure</strong>.
-    <br><br>
-    Connect on <a href="https://www.linkedin.com/in/amanpatelofficial/" target="_blank">LinkedIn</a> • © 2025 Aman Patel
+    © 2025 Aman Patel • Insights on Cloud, DevOps & AI Infrastructure
   </footer>
 
-  <script>
-    // Theme toggle
-    const themeToggle = document.getElementById("themeToggle");
-    const pref = localStorage.getItem("theme");
-    if (pref === "dark") {
-      document.documentElement.setAttribute("data-theme", "dark");
-      themeToggle.textContent = "☀️ Light";
-    }
+<script>
+const themeToggle = document.getElementById("themeToggle");
+const saved = localStorage.getItem("theme");
+if (saved === "dark") {
+  document.documentElement.setAttribute("data-theme", "dark");
+  themeToggle.textContent = "☀️ Light";
+}
 
-    themeToggle.onclick = () => {
-      const isDark = document.documentElement.getAttribute("data-theme") === "dark";
-      if (isDark) {
-        document.documentElement.removeAttribute("data-theme");
-        localStorage.setItem("theme", "light");
-        themeToggle.textContent = "🌙 Dark";
-      } else {
-        document.documentElement.setAttribute("data-theme", "dark");
-        localStorage.setItem("theme", "dark");
-        themeToggle.textContent = "☀️ Light";
-      }
-    };
-
-    // Typewriter
-    const taglineEl = document.getElementById("tagline");
-    const phrases = [
-      { text: "Let’s code & deploy with AI", color: "#2563eb" },
-      { text: "Automate. Scale. Innovate.", color: "#16a34a" },
-      { text: "Empowering Cloud with DevOps.", color: "#d97706" },
-      { text: "Where Infrastructure meets Intelligence.", color: "#9333ea" }
-    ];
-
-    let p = 0, i = 0, del = false;
-
-    function type() {
-      const { text, color } = phrases[p];
-      taglineEl.style.color = color;
-      taglineEl.textContent = text.slice(0, i);
-
-      let speed = del ? 55 : 95;
-      if (!del && i === text.length) { speed = 1000; del = true; }
-      else if (del && i === 0) { del = false; p = (p + 1) % phrases.length; speed = 500; }
-      else i += del ? -1 : 1;
-
-      setTimeout(type, speed);
-    }
-
-    // Talks section scroll reveal
-    const talksSection = document.getElementById("talksSection");
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            talksSection.classList.add("visible");
-            observer.unobserve(talksSection);
-          }
-        });
-      },
-      { threshold: 0.25 }
-    );
-
-    observer.observe(talksSection);
-
-    window.onload = () => setTimeout(type, 400);
-  </script>
+themeToggle.onclick = () => {
+  const dark = document.documentElement.getAttribute("data-theme") === "dark";
+  if (dark) {
+    document.documentElement.removeAttribute("data-theme");
+    localStorage.setItem("theme", "light");
+    themeToggle.textContent = "🌙 Dark";
+  } else {
+    document.documentElement.setAttribute("data-theme", "dark");
+    localStorage.setItem("theme", "dark");
+    themeToggle.textContent = "☀️ Light";
+  }
+};
+</script>
 
 </body>
 </html>

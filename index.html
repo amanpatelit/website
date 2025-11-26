@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <title>Aman Patel | Sr. ML DevOps Engineer</title>
   <link rel="icon" type="image/png" href="https://cdn.amansdlc.com/aiwithaman.png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous" />
 
   <style>
     :root {
@@ -61,14 +63,36 @@
       margin-bottom: 14px;
     }
 
-    h1 { font-size: 1.8rem; margin: 10px 0 4px; }
-    h2 { font-size: 1.05rem; margin: 0; color: var(--muted); }
+    h1 {
+      font-size: 1.8rem;
+      margin: 10px 0 4px;
+    }
 
-    .tagline-wrap { height: 26px; margin-top: 8px; }
+    h2 {
+      font-size: 1.05rem;
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .tagline-wrap {
+      height: 26px;
+      margin-top: 8px;
+    }
 
     .social a {
       font-size: 1.6rem;
       margin: 0 10px;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+      display: inline-block;
+    }
+
+    .social a:hover {
+      transform: scale(1.25) rotate(8deg);
+      opacity: 0.85;
+    }
+
+    .social a:active {
+      transform: scale(0.9) rotate(-4deg);
     }
 
     .newsletter-btn {
@@ -80,10 +104,12 @@
       text-decoration: none;
       border-radius: 10px;
       font-weight: 500;
-      transition: 0.2s;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
+
     .newsletter-btn:hover {
-      opacity: 0.9;
+      transform: scale(1.05);
+      box-shadow: 0 0 12px var(--brand);
     }
 
     .talks-section {
@@ -134,102 +160,40 @@
       z-index: 20;
       transition: 0.2s;
     }
-    .theme-toggle:hover { opacity: 0.9; }
 
-    @media (min-width: 768px) {
-      .content { padding-top: 90px; }
-      .card { padding: 36px 32px; }
-    }
-      /* Icon Animations */
-    .talks-icon {
-      display: inline-block;
-      animation: micBounce 1.4s infinite ease-in-out,
-                 micGlow 2.4s infinite ease-in-out,
-                 micWave 2s infinite ease-in-out;
-      transform-origin: center;
-    }
-
-    @keyframes micBounce {
-      0%   { transform: translateY(0) rotate(0deg) scale(1); }
-      20%  { transform: translateY(-8px) rotate(-5deg) scale(1.05); }
-      50%  { transform: translateY(-14px) rotate(4deg) scale(1.12); }
-      80%  { transform: translateY(-6px) rotate(-3deg) scale(1.06); }
-      100% { transform: translateY(0) rotate(0deg) scale(1); }
-    }
-      25% { transform: translateY(-10px) rotate(-5deg) scale(1.05); }
-      50% { transform: translateY(-4px) rotate(5deg) scale(1.1); }
-      75% { transform: translateY(-12px) rotate(-3deg) scale(1.05); }
-      100% { transform: translateY(0) rotate(0deg) scale(1); }
-    } {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-    }
-
-    .social a {
-      transition: transform 0.25s ease, opacity 0.25s ease;
-    }
-
-    .social a:hover {
-      transform: scale(1.2) rotate(5deg);
+    .theme-toggle:hover {
       opacity: 0.9;
     }
 
-    .newsletter-btn:hover {
-      transform: scale(1.03);
-    }
-
-    /* Icon Animations */
+    /* Mic animation */
     .talks-icon {
       display: inline-block;
-      animation: micBounce 1.4s infinite ease-in-out, micGlow 2.2s infinite ease-in-out;
+      animation: micBounce 1.4s infinite ease-in-out,
+        micGlow 2.2s infinite ease-in-out;
     }
 
     @keyframes micBounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
     }
 
     @keyframes micGlow {
-      0%, 100% { filter: drop-shadow(0 0 0px var(--brand)); }
-      50% { filter: drop-shadow(0 0 16px var(--brand)); }
-    }
-      50% { filter: drop-shadow(0 0 14px var(--brand)); }
-    } {
-      0%, 100% { filter: drop-shadow(0 0 0px var(--brand)); }
-      50% { filter: drop-shadow(0 0 8px var(--brand)); }
-    }
+      0%,
+      100% {
+        filter: drop-shadow(0 0 0px var(--brand));
+      }
 
-    /* Social Icon Motion */
-    .social a {
-      transition: transform 0.25s ease, opacity 0.25s ease;
-      display: inline-block;
+      50% {
+        filter: drop-shadow(0 0 16px var(--brand));
+      }
     }
-
-    .social a:hover {
-      transform: scale(1.25) rotate(8deg);
-      opacity: 0.85;
-    }
-
-    .social a:active {
-      transform: scale(0.9) rotate(-4deg);
-    }
-
-    /* Newsletter Motion */
-    .newsletter-btn {
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-    .newsletter-btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 12px var(--brand);
-    }
-
-    @keyframes micWave {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.12); }
-      100% { transform: scale(1); }
-    }
-
-</style>
+  </style>
 </head>
 
 <body>
@@ -248,13 +212,27 @@
       </div>
 
       <div class="social">
-        <a href="https://www.linkedin.com/in/amanpatelofficial/" style="color:#0A66C2;"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="https://github.com/amanpatelit" style="color:#000000;"><i class="fa-brands fa-github"></i></a>
-        <a href="https://www.youtube.com/@amanpatelletscodeanddeploy" style="color:#FF0000;"><i class="fa-brands fa-youtube"></i></a>
+
+        <a href="https://www.linkedin.com/in/amanpatelofficial/" style="color:#0A66C2;">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+
+        <a href="https://github.com/amanpatelit" style="color:#000000;">
+          <i class="fa-brands fa-github"></i>
+        </a>
+
+        <a href="https://www.youtube.com/@amanpatelletscodeanddeploy" style="color:#FF0000;">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+
+        <!-- ⭐ New Substack Blog Icon -->
+        <a href="https://amanpatelofficial.substack.com/" style="color:#FF6719;">
+          <i class="fa-solid fa-rss"></i>
+        </a>
+
       </div>
 
-      <a href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7398812948757893120"
-        class="newsletter-btn">
+      <a href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7398812948757893120" class="newsletter-btn">
         <i class="fa-solid fa-bell"></i> Subscribe to My Newsletter
       </a>
     </div>
@@ -276,27 +254,28 @@
     © 2025 Aman Patel • Insights on Cloud, DevOps & AI Infrastructure
   </footer>
 
-<script>
-const themeToggle = document.getElementById("themeToggle");
-const saved = localStorage.getItem("theme");
-if (saved === "dark") {
-  document.documentElement.setAttribute("data-theme", "dark");
-  themeToggle.textContent = "☀️ Light";
-}
+  <script>
+    const themeToggle = document.getElementById("themeToggle");
+    const saved = localStorage.getItem("theme");
+    if (saved === "dark") {
+      document.documentElement.setAttribute("data-theme", "dark");
+      themeToggle.textContent = "☀️ Light";
+    }
 
-themeToggle.onclick = () => {
-  const dark = document.documentElement.getAttribute("data-theme") === "dark";
-  if (dark) {
-    document.documentElement.removeAttribute("data-theme");
-    localStorage.setItem("theme", "light");
-    themeToggle.textContent = "🌙 Dark";
-  } else {
-    document.documentElement.setAttribute("data-theme", "dark");
-    localStorage.setItem("theme", "dark");
-    themeToggle.textContent = "☀️ Light";
-  }
-};
-</script>
+    themeToggle.onclick = () => {
+      const dark = document.documentElement.getAttribute("data-theme") === "dark";
+      if (dark) {
+        document.documentElement.removeAttribute("data-theme");
+        localStorage.setItem("theme", "light");
+        themeToggle.textContent = "🌙 Dark";
+      } else {
+        document.documentElement.setAttribute("data-theme", "dark");
+        localStorage.setItem("theme", "dark");
+        themeToggle.textContent = "☀️ Light";
+      }
+    };
+  </script>
 
 </body>
+
 </html>

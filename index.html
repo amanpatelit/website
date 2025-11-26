@@ -52,6 +52,20 @@
       box-shadow: 0 20px 45px var(--shadow);
       text-align: center;
       border: 1px solid var(--border);
+      animation: fadeUp 0.8s ease-out;
+    }
+
+    /* Card entrance animation */
+    @keyframes fadeUp {
+      0% {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .profile-img {
@@ -61,6 +75,12 @@
       object-fit: cover;
       border: 3px solid var(--brand);
       margin-bottom: 14px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .profile-img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 18px var(--brand);
     }
 
     h1 {
@@ -79,22 +99,34 @@
       margin-top: 8px;
     }
 
+    /* -----------------------------------------------------
+        PROFESSIONAL SOCIAL ICON SYSTEM
+    ------------------------------------------------------ */
     .social a {
-      font-size: 1.6rem;
-      margin: 0 10px;
-      transition: transform 0.25s ease, opacity 0.25s ease;
+      font-size: 1.7rem;
+      margin: 0 12px;
       display: inline-block;
+
+      transition:
+        transform 0.22s cubic-bezier(0.25, 0.1, 0.25, 1),
+        filter 0.25s ease,
+        opacity 0.25s ease;
     }
 
     .social a:hover {
-      transform: scale(1.25) rotate(8deg);
-      opacity: 0.85;
+      transform: scale(1.12) rotate(3deg);
+      filter: drop-shadow(0 0 8px var(--brand));
+      opacity: 0.95;
     }
 
     .social a:active {
-      transform: scale(0.9) rotate(-4deg);
+      transform: scale(0.9) rotate(-2deg);
+      opacity: 0.85;
     }
 
+    /* -----------------------------------------------------
+        NEWSLETTER BUTTON (Premium UX)
+    ------------------------------------------------------ */
     .newsletter-btn {
       display: inline-block;
       margin-top: 18px;
@@ -104,14 +136,24 @@
       text-decoration: none;
       border-radius: 10px;
       font-weight: 500;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      transition:
+        transform 0.22s cubic-bezier(0.25, 0.1, 0.25, 1),
+        box-shadow 0.25s ease;
     }
 
     .newsletter-btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 12px var(--brand);
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 4px 18px var(--brand);
     }
 
+    .newsletter-btn:active {
+      transform: scale(0.96);
+      box-shadow: none;
+    }
+
+    /* -----------------------------------------------------
+        TALKS SECTION + MIC ANIMATION
+    ------------------------------------------------------ */
     .talks-section {
       width: 100%;
       padding: 70px 16px;
@@ -137,6 +179,36 @@
       font-size: 1.05rem;
     }
 
+    .talks-icon {
+      display: inline-block;
+      animation:
+        micBounce 1.9s ease-in-out infinite,
+        micGlow 2.8s ease-in-out infinite;
+    }
+
+    @keyframes micBounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-6px);
+      }
+    }
+
+    @keyframes micGlow {
+      0%, 100% {
+        filter: drop-shadow(0 0 0px var(--brand));
+      }
+
+      50% {
+        filter: drop-shadow(0 0 10px var(--brand));
+      }
+    }
+
+    /* -----------------------------------------------------
+        FOOTER
+    ------------------------------------------------------ */
     footer {
       padding: 40px 10px;
       font-size: 0.9rem;
@@ -144,6 +216,9 @@
       color: var(--muted);
     }
 
+    /* -----------------------------------------------------
+        THEME TOGGLE BUTTON
+    ------------------------------------------------------ */
     .theme-toggle {
       position: fixed;
       top: 18px;
@@ -162,36 +237,7 @@
     }
 
     .theme-toggle:hover {
-      opacity: 0.9;
-    }
-
-    /* Mic animation */
-    .talks-icon {
-      display: inline-block;
-      animation: micBounce 1.4s infinite ease-in-out,
-        micGlow 2.2s infinite ease-in-out;
-    }
-
-    @keyframes micBounce {
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-10px);
-      }
-    }
-
-    @keyframes micGlow {
-      0%,
-      100% {
-        filter: drop-shadow(0 0 0px var(--brand));
-      }
-
-      50% {
-        filter: drop-shadow(0 0 16px var(--brand));
-      }
+      transform: scale(1.05);
     }
   </style>
 </head>
@@ -225,7 +271,6 @@
           <i class="fa-brands fa-youtube"></i>
         </a>
 
-        <!-- ⭐ New Substack Blog Icon -->
         <a href="https://amanpatelofficial.substack.com/" style="color:#FF6719;">
           <i class="fa-solid fa-rss"></i>
         </a>

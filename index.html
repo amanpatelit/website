@@ -2,218 +2,343 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aman Patel | Sr. ML DevOps Engineer</title>
 
-  <link rel="icon" href="https://cdn.amansdlc.com/aiwithaman.png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" type="image/png" href="https://cdn.amansdlc.com/aiwithaman.png" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   <style>
-    html, body {
+    /* GENERAL RESET */
+    html,
+    body {
       margin: 0;
       padding: 0;
-      font-family: "Poppins", sans-serif;
-      background: #0d1117;
-      color: #fff;
+      overflow-x: hidden;
+      font-family: "Poppins", system-ui, sans-serif;
+      width: 100%;
     }
 
-    /* THEME BUTTON */
+    * {
+      box-sizing: border-box;
+    }
+
+    /* LIGHT THEME */
+    :root {
+      --bg: #f4f6f9;
+      --text: #0f1115;
+      --muted: #6d7280;
+      --brand: #2563eb;
+      --card: #ffffff;
+      --border: rgba(0, 0, 0, 0.08);
+      --shadow: rgba(0, 0, 0, 0.06);
+    }
+
+    /* DARK THEME */
+    [data-theme="dark"] {
+      --bg: #0d1117;
+      --text: #e6edf3;
+      --muted: #9ca3af;
+      --brand: #3ea6ff;
+      --card: #161b22;
+      --border: rgba(255, 255, 255, 0.08);
+      --shadow: rgba(0, 0, 0, 0.7);
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    /* THEME TOGGLE BUTTON */
     .theme-toggle {
       position: fixed;
       top: 12px;
       right: 12px;
-      padding: 8px 14px;
+      padding: 7px 16px;
+      background: var(--card);
+      color: var(--brand);
+      border: 2px solid var(--brand);
       border-radius: 50px;
-      border: 2px solid #3ea6ff;
-      background: rgba(0,0,0,0.4);
-      color: #3ea6ff;
       font-size: .82rem;
+      font-weight: 600;
       cursor: pointer;
-      backdrop-filter: blur(6px);
+      transition: .25s;
       z-index: 1000;
     }
 
-    /* CLEAN HERO (NO VIDEO) */
-    .hero {
-      height: 70vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 20px;
-      background: linear-gradient(135deg, #0d1117, #111827);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .hero-content {
-      max-width: 650px;
-      animation: fadeUp 1s ease-out;
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-
-    .hero h2 {
-      font-size: 1.2rem;
-      opacity: 0.85;
-      margin-bottom: 25px;
-    }
-
-    .cta {
-      padding: 14px 26px;
-      background: #3ea6ff;
-      color: #000;
-      font-weight: 700;
-      border-radius: 10px;
-      text-decoration: none;
-      transition: 0.2s;
-    }
-
-    .cta:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 18px rgba(62,166,255,0.4);
-    }
-
-    /* PROFILE CARD */
+    /* MAIN CONTENT CARD */
     .content {
       display: flex;
       justify-content: center;
-      padding: 40px 16px 20px;
+      padding: 48px 16px 25px;
+      width: 100%;
     }
 
     .card {
       width: 100%;
       max-width: 420px;
-      background: #161b22;
-      padding: 28px 22px;
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,0.1);
+      background: var(--card);
+      padding: 26px 22px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      box-shadow: 0 14px 35px var(--shadow);
       text-align: center;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-      animation: fadeUp 0.8s ease-out;
+      animation: fadeUp 0.7s ease-out;
     }
 
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* PROFILE IMAGE */
     .profile-img {
       width: 120px;
       height: 120px;
       border-radius: 50%;
-      border: 3px solid #3ea6ff;
-      margin-bottom: 10px;
+      border: 3px solid var(--brand);
+      object-fit: cover;
+      margin-bottom: 8px;
+      transition: .3s;
     }
 
+    .profile-img:hover {
+      transform: scale(1.05);
+    }
+
+    /* HEADINGS */
+    h1 {
+      margin: 10px 0 4px;
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    /* ROTATING THOUGHT TEXT */
     .thought-line {
-      opacity: 0.8;
-      margin-bottom: 12px;
-      font-style: italic;
       height: 20px;
+      font-size: .95rem;
+      margin-bottom: 14px;
+      color: var(--muted);
+      font-style: italic;
+      animation: fadeText 4s infinite;
     }
 
+    @keyframes fadeText {
+      0% {
+        opacity: 0;
+        transform: translateY(4px);
+      }
+
+      15% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      85% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+        transform: translateY(-4px);
+      }
+    }
+
+    /* SOCIAL ICON ROW */
     .social {
       display: flex;
       justify-content: center;
-      gap: 18px;
-      margin: 16px 0;
+      gap: 16px;
+      margin: 12px 0 14px;
     }
 
     .social a {
       font-size: 1.45rem;
-      transition: 0.2s;
+      transition: .25s;
     }
 
     .social a:hover {
       transform: translateY(-3px);
     }
 
+    /* BUTTON */
     .newsletter-btn {
-      padding: 12px 20px;
-      background: #3ea6ff;
-      color: #000;
-      font-weight: 600;
-      border-radius: 12px;
       width: 100%;
-      display: inline-block;
+      padding: 14px 0;
+      background: linear-gradient(135deg, var(--brand), #1e4fcf);
+      border-radius: 14px;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
       text-decoration: none;
-      margin-top: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: 0.25s ease;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+      margin-top: 6px;
     }
 
+    .newsletter-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+    }
+
+    /* TALKS SECTION */
+    .talks-section {
+      text-align: center;
+      padding: 40px 15px 25px;
+    }
+
+    .talks-icon {
+      font-size: 3.3rem;
+      color: var(--brand);
+      animation: floatMic 3s infinite;
+    }
+
+    @keyframes floatMic {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-5px);
+      }
+    }
+
+    .talks-text {
+      max-width: 700px;
+      margin: 8px auto;
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .talks-email {
+      color: var(--brand);
+      display: block;
+      margin-top: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    /* FOOTER */
     footer {
       text-align: center;
-      padding: 22px;
-      color: #9ca3af;
-      margin-top: 40px;
-      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 24px 10px;
+      font-size: 0.85rem;
+      color: var(--muted);
     }
   </style>
 </head>
 
 <body>
 
-<button class="theme-toggle" id="themeToggle">☀️ Light</button>
+  <!-- THEME BUTTON -->
+  <button id="themeToggle" class="theme-toggle">🌙 Dark</button>
 
-<!-- HERO (NOW CLEAN + PROFESSIONAL) -->
-<section class="hero">
-  <div class="hero-content">
-    <h1>Aman Patel</h1>
-    <h2>Sr. ML DevOps Engineer • Cloud | DevOps | AI Infrastructure</h2>
-    <a href="#contact" class="cta">Book a Session</a>
-  </div>
-</section>
+  <!-- PROFILE CARD -->
+  <div class="content">
+    <div class="card">
 
-<!-- PROFILE CARD -->
-<div class="content">
-  <div class="card">
-    <img src="https://cdn.amansdlc.com/aiwithaman.png" class="profile-img">
+      <img src="https://cdn.amansdlc.com/aiwithaman.png" class="profile-img" />
 
-    <h3>Aman Patel</h3>
-    <p id="thoughtText" class="thought-line">💭 Let’s Code & Deploy</p>
+      <h1>Aman Patel</h1>
+      <h2>Sr. ML DevOps Engineer</h2>
 
-    <div class="social">
-      <a href="https://www.linkedin.com/in/amanpatelofficial/" style="color:#3ea6ff"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/amanpatelit" style="color:#fff"><i class="fab fa-github"></i></a>
-      <a href="https://www.youtube.com/@amanpatelletscodeanddeploy" style="color:#ff4747"><i class="fab fa-youtube"></i></a>
-      <a href="https://amanpatelofficial.substack.com/" style="color:#ffaa44"><i class="fa-solid fa-rss"></i></a>
+      <p class="thought-line" id="thoughtText">💭 Let’s Code & Deploy</p>
+
+      <div class="social">
+        <a href="https://www.linkedin.com/in/amanpatelofficial/" style="color:#0A66C2;"><i
+            class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/amanpatelit" style="color:#000;"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.youtube.com/@amanpatelletscodeanddeploy" style="color:#FF0000;"><i
+            class="fa-brands fa-youtube"></i></a>
+        <a href="https://amanpatelofficial.substack.com/" style="color:#ff6719;"><i class="fa-solid fa-rss"></i></a>
+      </div>
+
+      <a href="https://amanpatelofficial.substack.com/" class="newsletter-btn">
+        <i class="fa-solid fa-bell"></i> Subscribe to My Newsletter
+      </a>
+
     </div>
-
-    <a href="https://amanpatelofficial.substack.com/" class="newsletter-btn">
-      🔔 Subscribe to My Newsletter
-    </a>
   </div>
-</div>
 
-<footer>
-  © 2025 Aman Patel • Cloud, DevOps & AI Infrastructure
-</footer>
+  <!-- TALKS SECTION -->
+  <section class="talks-section">
+    <i class="fa-solid fa-microphone-lines talks-icon"></i>
+    <h2>Talks & Presentations</h2>
+    <p class="talks-text">
+      I deliver sessions on DevOps, Cloud Infrastructure, AI-driven automation,
+      platform engineering, and modern tech career strategies.
+    </p>
+    <span class="talks-email">amanpatel.itofficial@gmail.com</span>
+  </section>
 
-<script>
-  // THOUGHT ROTATION
-  const thoughts = [
-    "💭 Let’s Code & Deploy",
-    "Build • Automate • Scale",
-    "DevOps • Cloud • AI",
-    "Solving Infra Problems Daily",
-  ];
+  <!-- FOOTER -->
+  <footer>
+    © 2025 Aman Patel • Cloud, DevOps & AI Infrastructure
+  </footer>
 
-  let i = 0;
-  setInterval(() => {
-    document.getElementById("thoughtText").textContent = thoughts[i];
-    i = (i + 1) % thoughts.length;
-  }, 3500);
+  <script>
+    // THEME SWITCH
+    const btn = document.getElementById("themeToggle");
+    const savedTheme = localStorage.getItem("theme");
 
-  // THEME BUTTON (LIGHT / DARK)
-  const btn = document.getElementById("themeToggle");
-  btn.onclick = () => {
-    document.body.classList.toggle("light");
-  };
-</script>
+    if (savedTheme === "dark") {
+      document.documentElement.setAttribute("data-theme", "dark");
+      btn.textContent = "☀️ Light";
+    }
+
+    btn.onclick = () => {
+      const dark = document.documentElement.getAttribute("data-theme") === "dark";
+      if (dark) {
+        document.documentElement.removeAttribute("data-theme");
+        localStorage.setItem("theme", "light");
+        btn.textContent = "🌙 Dark";
+      } else {
+        document.documentElement.setAttribute("data-theme", "dark");
+        localStorage.setItem("theme", "dark");
+        btn.textContent = "☀️ Light";
+      }
+    };
+
+    // ROTATING THOUGHT LINE
+    const thoughts = [
+      "💭 Let’s Code & Deploy",
+      "Build • Automate • Scale",
+      "DevOps • Cloud • AI",
+      "Solving Infra Problems Daily"
+    ];
+
+    let i = 0;
+    const el = document.getElementById("thoughtText");
+
+    setInterval(() => {
+      i = (i + 1) % thoughts.length;
+      el.textContent = thoughts[i];
+    }, 4000);
+  </script>
 
 </body>
+
 </html>

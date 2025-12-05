@@ -10,18 +10,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   <style>
-    /* Remove horizontal scroll */
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-      width: 100%;
+    html, body {
+      margin: 0; padding: 0; overflow-x: hidden; width: 100%;
     }
-
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     :root {
       --bg: #f4f6f9;
@@ -29,8 +21,8 @@
       --muted: #6d7280;
       --brand: #2563eb;
       --card: #ffffff;
-      --border: rgba(0, 0, 0, 0.08);
-      --shadow: rgba(0, 0, 0, 0.06);
+      --border: rgba(0,0,0,0.08);
+      --shadow: rgba(0,0,0,0.06);
     }
 
     [data-theme="dark"] {
@@ -39,8 +31,8 @@
       --muted: #9ca3af;
       --brand: #3ea6ff;
       --card: #161b22;
-      --border: rgba(255, 255, 255, 0.08);
-      --shadow: rgba(0, 0, 0, 0.7);
+      --border: rgba(255,255,255,0.08);
+      --shadow: rgba(0,0,0,0.7);
     }
 
     body {
@@ -49,7 +41,6 @@
       color: var(--text);
     }
 
-    /* COMPACT LAYOUT */
     .content {
       display: flex;
       justify-content: center;
@@ -70,15 +61,8 @@
     }
 
     @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(12px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
     .profile-img {
@@ -90,7 +74,6 @@
       margin-bottom: 8px;
       transition: .3s;
     }
-
     .profile-img:hover {
       transform: scale(1.05);
     }
@@ -100,7 +83,6 @@
       font-size: 1.8rem;
       font-weight: 600;
     }
-
     h2 {
       margin: 0 0 10px;
       color: var(--muted);
@@ -116,26 +98,11 @@
       font-style: italic;
       animation: fadeText 4s infinite;
     }
-
     @keyframes fadeText {
-      0% {
-        opacity: 0;
-        transform: translateY(4px);
-      }
-
-      15% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      85% {
-        opacity: 1;
-      }
-
-      100% {
-        opacity: 0;
-        transform: translateY(-4px);
-      }
+      0%   { opacity: 0; transform: translateY(4px); }
+      15%  { opacity: 1; transform: translateY(0); }
+      85%  { opacity: 1; }
+      100% { opacity: 0; transform: translateY(-4px); }
     }
 
     .social {
@@ -144,17 +111,9 @@
       gap: 16px;
       margin: 12px 0 14px;
     }
+    .social a { font-size: 1.45rem; transition: .25s; }
+    .social a:hover { transform: translateY(-3px); }
 
-    .social a {
-      font-size: 1.45rem;
-      transition: .25s;
-    }
-
-    .social a:hover {
-      transform: translateY(-3px);
-    }
-
-    /* PREMIUM BUTTON */
     .newsletter-btn {
       width: 100%;
       padding: 14px 0;
@@ -169,58 +128,68 @@
       justify-content: center;
       gap: 10px;
       transition: 0.25s ease;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
       margin-top: 6px;
     }
-
     .newsletter-btn:hover {
       transform: translateY(-3px);
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.18);
     }
 
-    /* === VIDEO SECTION === */
-    .video-section {
+    /* === YouTube Background Section === */
+    .yt-bg-section {
       position: relative;
-      height: 330px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
+      width: 100%;
+      /* adjust height as needed */
+      height: 340px;
       margin: 35px 15px;
       border-radius: 16px;
+      overflow: hidden;
     }
 
-    .bg-video {
+    .yt-bg-section .video-wrapper {
       position: absolute;
-      top: 0;
-      left: 0;
+      top: 50%;
+      left: 50%;
+      width: 120%;
+      height: 120%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .yt-bg-section iframe {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      filter: brightness(55%);
-      z-index: -1;
+      border: 0;
     }
 
-    .video-content {
+    .yt-overlay {
       position: relative;
-      text-align: center;
+      z-index: 1;
       color: white;
+      text-align: center;
       padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      background: rgba(0,0,0,0.25);
     }
 
-    .video-content h2 {
+    .yt-overlay h2 {
       font-size: 1.8rem;
-      margin-top: 10px;
+      margin: 10px 0;
     }
 
-    .video-content p {
+    .yt-overlay p {
       max-width: 650px;
-      margin: auto;
       font-size: 0.95rem;
       opacity: 0.9;
+      margin: 8px 0;
     }
 
-    .video-content .talks-email {
+    .yt-overlay .talks-email {
       display: block;
       margin-top: 10px;
       font-size: 1rem;
@@ -233,10 +202,9 @@
       color: #ffffff;
       animation: floatMic 3s infinite;
     }
-
     @keyframes floatMic {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-5px); }
+      0%,100% { transform: translateY(0); }
+      50%     { transform: translateY(-5px); }
     }
 
     footer {
@@ -246,7 +214,6 @@
       color: var(--muted);
     }
 
-    /* Toggle Button */
     .theme-toggle {
       position: fixed;
       top: 12px;
@@ -267,93 +234,88 @@
 
 <body>
 
-<button id="themeToggle" class="theme-toggle">🌙 Dark</button>
+  <button id="themeToggle" class="theme-toggle">🌙 Dark</button>
 
-<div class="content">
-  <div class="card">
-    <img src="https://cdn.amansdlc.com/aiwithaman.png" class="profile-img" />
+  <div class="content">
+    <div class="card">
+      <img src="https://cdn.amansdlc.com/aiwithaman.png" class="profile-img" />
 
-    <h1>Aman Patel</h1>
-    <h2>Sr. ML DevOps Engineer</h2>
+      <h1>Aman Patel</h1>
+      <h2>Sr. ML DevOps Engineer</h2>
 
-    <p class="thought-line" id="thoughtText">💭 Let’s Code & Deploy</p>
+      <p class="thought-line" id="thoughtText">💭 Let’s Code & Deploy</p>
 
-    <div class="social">
-      <a href="https://www.linkedin.com/in/amanpatelofficial/" style="color:#0A66C2;"><i class="fa-brands fa-linkedin"></i></a>
-      <a href="https://github.com/amanpatelit" style="color:#000;"><i class="fa-brands fa-github"></i></a>
-      <a href="https://www.youtube.com/@amanpatelletscodeanddeploy" style="color:#FF0000;"><i class="fa-brands fa-youtube"></i></a>
-      <a href="https://amanpatelofficial.substack.com/" style="color:#ff6719;"><i class="fa-solid fa-rss"></i></a>
+      <div class="social">
+        <a href="https://www.linkedin.com/in/amanpatelofficial/" style="color:#0A66C2;"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/amanpatelit" style="color:#000;"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.youtube.com/@amanpatelletscodeanddeploy" style="color:#FF0000;"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://amanpatelofficial.substack.com/" style="color:#ff6719;"><i class="fa-solid fa-rss"></i></a>
+      </div>
+
+      <a href="https://amanpatelofficial.substack.com/" class="newsletter-btn">
+        <i class="fa-solid fa-bell"></i> Subscribe to My Newsletter
+      </a>
     </div>
-
-    <a href="https://amanpatelofficial.substack.com/" class="newsletter-btn">
-      <i class="fa-solid fa-bell"></i> Subscribe to My Newsletter
-    </a>
   </div>
-</div>
 
-<!-- 🎥 PUBLIC SPEAKING BACKGROUND VIDEO SECTION -->
-<section class="video-section">
-  <video autoplay muted loop playsinline class="bg-video">
-    <source src="https://assets.mixkit.co/videos/preview/mixkit-audience-listening-to-a-speaker-at-a-conference-5139-large.mp4" type="video/mp4">
-  </video>
+  <!-- YouTube Background Video Section -->
+  <section class="yt-bg-section">
+    <div class="video-wrapper">
+      <iframe
+        src="https://www.youtube.com/embed/hceiQjFzE2E?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&loop=1&playlist=hceiQjFzE2E"
+        allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen>
+      </iframe>
+    </div>
+    <div class="yt-overlay">
+      <i class="fa-solid fa-microphone-lines talks-icon"></i>
+      <h2>Talks & Presentations</h2>
+      <p>
+        I deliver sessions on DevOps, Cloud Infrastructure, AI-driven automation,
+        platform engineering, and modern tech career strategies.
+      </p>
+      <span class="talks-email">amanpatel.itofficial@gmail.com</span>
+    </div>
+  </section>
 
-  <div class="video-content">
-    <i class="fa-solid fa-microphone-lines talks-icon"></i>
-    <h2>Talks & Presentations</h2>
+  <footer>
+    © 2025 Aman Patel • Cloud, DevOps & AI Infrastructure
+  </footer>
 
-    <p>
-      I deliver sessions on DevOps, Cloud Infrastructure, AI-driven automation,
-      platform engineering, and modern tech career strategies.
-    </p>
+  <script>
+    const btn = document.getElementById("themeToggle");
+    const savedTheme = localStorage.getItem("theme");
 
-    <span class="talks-email">amanpatel.itofficial@gmail.com</span>
-  </div>
-</section>
-
-<footer>
-  © 2025 Aman Patel • Cloud, DevOps & AI Infrastructure
-</footer>
-
-<script>
-  /* THEME TOGGLE */
-  const btn = document.getElementById("themeToggle");
-  const savedTheme = localStorage.getItem("theme");
-
-  if (savedTheme === "dark") {
-    document.documentElement.setAttribute("data-theme", "dark");
-    btn.textContent = "☀️ Light";
-  }
-
-  btn.onclick = () => {
-    const isDark = document.documentElement.getAttribute("data-theme") === "dark";
-
-    if (isDark) {
-      document.documentElement.removeAttribute("data-theme");
-      localStorage.setItem("theme", "light");
-      btn.textContent = "🌙 Dark";
-    } else {
+    if (savedTheme === "dark") {
       document.documentElement.setAttribute("data-theme", "dark");
-      localStorage.setItem("theme", "dark");
       btn.textContent = "☀️ Light";
     }
-  };
 
-  /* THOUGHT ROTATION */
-  const thoughts = [
-    "💭 Let’s Code & Deploy",
-    "Build • Automate • Scale",
-    "DevOps • Cloud • AI",
-    "Solving Infra Problems Daily"
-  ];
+    btn.onclick = () => {
+      const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+      if (isDark) {
+        document.documentElement.removeAttribute("data-theme");
+        localStorage.setItem("theme", "light");
+        btn.textContent = "🌙 Dark";
+      } else {
+        document.documentElement.setAttribute("data-theme", "dark");
+        localStorage.setItem("theme", "dark");
+        btn.textContent = "☀️ Light";
+      }
+    };
 
-  let i = 0;
-  const el = document.getElementById("thoughtText");
-
-  setInterval(() => {
-    i = (i + 1) % thoughts.length;
-    el.textContent = thoughts[i];
-  }, 4000);
-</script>
+    const thoughts = [
+      "💭 Let’s Code & Deploy",
+      "Build • Automate • Scale",
+      "DevOps • Cloud • AI",
+      "Solving Infra Problems Daily"
+    ];
+    let i = 0;
+    const el = document.getElementById("thoughtText");
+    setInterval(() => {
+      i = (i + 1) % thoughts.length;
+      el.textContent = thoughts[i];
+    }, 4000);
+  </script>
 
 </body>
 </html>

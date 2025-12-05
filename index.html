@@ -8,35 +8,39 @@
 
   <link rel="icon" href="https://cdn.amansdlc.com/aiwithaman.png" />
   <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   <style>
-    /* Root Theme */
+    /* ------------------------------
+       THEME + GLOBAL SETTINGS
+    ------------------------------ */
+
     :root {
-      --bg: #f7f9fc;
+      --bg: #f8fafc;
       --text: #0f172a;
-      --muted: #6b7280;
+      --muted: #64748b;
       --brand: #2563eb;
+      --brand-dark: #1e40af;
       --brand-soft: #dbeafe;
       --card: #ffffff;
-      --border: rgba(15, 23, 42, 0.08);
-      --shadow: 0 14px 40px rgba(15, 23, 42, 0.08);
-      --radius: 16px;
+      --border: rgba(0, 0, 0, 0.08);
+      --shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
       --container: 1180px;
+      --radius: 16px;
     }
 
     [data-theme="dark"] {
       --bg: #020617;
-      --text: #e5e7eb;
-      --muted: #9ca3af;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
       --brand: #3ea6ff;
-      --brand-soft: rgba(62, 166, 255, 0.16);
-      --card: #020617;
-      --border: rgba(148, 163, 184, 0.25);
-      --shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+      --brand-dark: #1e75ff;
+      --brand-soft: rgba(62, 166, 255, 0.15);
+      --card: #050c1a;
+      --border: rgba(255, 255, 255, 0.12);
+      --shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
     }
 
-    /* Global Reset */
     * {
       margin: 0;
       padding: 0;
@@ -46,63 +50,73 @@
     body {
       background: var(--bg);
       color: var(--text);
-      font-family: system-ui, -apple-system, "Poppins", sans-serif;
+      font-family: "Poppins", sans-serif;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
 
-    a { color: inherit; text-decoration: none; }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-    /* Centered Container */
     .container {
       max-width: var(--container);
       margin: auto;
-      padding: 60px 20px;
+      padding: 50px 20px;
     }
 
-    /* Theme Toggle Button */
+    /* ------------------------------
+       THEME TOGGLE BUTTON
+    ------------------------------ */
+
     #themeToggle {
       position: fixed;
-      top: 16px;
-      right: 16px;
-      padding: 8px 18px;
-      font-size: 0.82rem;
-      background: var(--card);
-      border: 1px solid var(--border);
+      top: 14px;
+      right: 14px;
+      padding: 8px 16px;
       border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--muted);
       cursor: pointer;
-      box-shadow: var(--shadow);
+      font-size: 0.85rem;
       z-index: 999;
+      transition: 0.3s ease;
     }
 
-    /* HERO SECTION */
+    /* ------------------------------
+       HERO SECTION
+    ------------------------------ */
+
     .hero {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 50px;
+      align-items: center;
+      gap: 60px;
       flex-wrap: wrap;
+      margin-bottom: 60px;
     }
 
     .hero-left {
       flex: 1;
-      min-width: 320px;
+      min-width: 340px;
     }
 
     .hero-eyebrow {
-      font-size: 0.82rem;
-      color: var(--muted);
-      letter-spacing: 0.14em;
+      font-size: 0.78rem;
       text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
       margin-bottom: 8px;
     }
 
     .hero-title {
-      font-size: 2.8rem;
+      font-size: 3rem;
       font-weight: 700;
       margin-bottom: 10px;
-      max-width: 550px;
-      line-height: 1.2;
+      line-height: 1.18;
+      max-width: 600px;
     }
 
     .hero-title span {
@@ -110,21 +124,20 @@
     }
 
     .hero-subtitle {
-      max-width: 520px;
-      font-size: 1.05rem;
+      max-width: 560px;
       color: var(--muted);
-      margin-bottom: 18px;
+      font-size: 1.05rem;
+      margin-bottom: 20px;
     }
 
     .tagline {
       display: inline-block;
-      padding: 8px 16px;
       background: var(--brand-soft);
-      color: var(--brand);
-      font-size: 0.9rem;
+      padding: 8px 18px;
       border-radius: 12px;
-      margin-bottom: 24px;
+      color: var(--brand-dark);
       font-weight: 600;
+      margin-bottom: 26px;
     }
 
     .hero-buttons {
@@ -134,14 +147,14 @@
     }
 
     .btn {
-      padding: 12px 20px;
+      padding: 12px 22px;
       border-radius: 12px;
-      font-size: 0.92rem;
       font-weight: 600;
-      cursor: pointer;
+      font-size: 0.95rem;
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
+      cursor: pointer;
       transition: 0.25s ease;
     }
 
@@ -152,41 +165,48 @@
     }
 
     .btn-primary:hover {
+      background: var(--brand-dark);
       transform: translateY(-2px);
-      background: #1d4ed8;
     }
 
     .btn-dark {
       background: #1e293b;
-      color: #fff;
+      color: white;
     }
 
-    /* HERO RIGHT CARD */
+    /* ------------------------------
+       RIGHT PROFILE CARD (HERO)
+    ------------------------------ */
+
     .hero-right {
       flex: 0.8;
       display: flex;
       justify-content: center;
-      min-width: 280px;
     }
 
     .profile-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 30px;
       width: 100%;
       max-width: 320px;
-      padding: 26px;
-      border-radius: var(--radius);
-      background: var(--card);
-      border: 1px solid var(--border);
       text-align: center;
       box-shadow: var(--shadow);
+      transition: 0.3s ease;
+    }
+
+    .profile-card:hover {
+      transform: translateY(-3px);
     }
 
     .profile-card img {
-      width: 120px;
-      height: 120px;
+      width: 125px;
+      height: 125px;
       border-radius: 50%;
       object-fit: cover;
       border: 3px solid var(--brand);
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
     .profile-name {
@@ -195,71 +215,72 @@
     }
 
     .profile-role {
-      font-size: 0.9rem;
+      font-size: 0.92rem;
       color: var(--muted);
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
 
     .profile-social {
       display: flex;
       justify-content: center;
-      gap: 16px;
-      margin-bottom: 14px;
+      gap: 18px;
+      margin-bottom: 16px;
     }
 
-    .profile-social a {
-      font-size: 1.3rem;
-      color: var(--muted);
-      transition: 0.2s;
-    }
+    /* Original Social Media Colors */
+    .linkedin { color: #0A66C2 !important; }
+    .github { color: #000 !important; }
+    .youtube { color: #FF0000 !important; }
+    .substack { color: #FF6719 !important; }
 
     .profile-social a:hover {
-      color: var(--brand);
+      opacity: 0.8;
       transform: translateY(-2px);
     }
 
     .newsletter-btn {
       display: inline-flex;
-      align-items: center;
-      gap: 8px;
       padding: 8px 14px;
+      gap: 8px;
       border-radius: 999px;
       background: var(--brand-soft);
-      color: var(--brand);
-      font-size: 0.85rem;
+      color: var(--brand-dark);
+      font-size: 0.9rem;
       font-weight: 600;
     }
 
-    /* SECTION HEADER */
+    /* ------------------------------
+       SPEAKING SECTION
+    ------------------------------ */
+
     .section-header {
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 50px;
     }
 
     .section-title {
-      font-size: 2rem;
-      margin-bottom: 10px;
+      font-size: 2.2rem;
       font-weight: 700;
+      margin-bottom: 12px;
     }
 
     .section-sub {
-      max-width: 620px;
+      max-width: 640px;
       margin: auto;
       font-size: 1rem;
       color: var(--muted);
     }
 
-    /* SPEAKING GRID */
     .speaking-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 26px;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
     }
 
     .speak-card {
       background: var(--card);
-      border: 1px solid var(--border);
       border-radius: var(--radius);
+      border: 1px solid var(--border);
       box-shadow: var(--shadow);
       overflow: hidden;
       transition: 0.28s ease;
@@ -271,76 +292,78 @@
 
     .speak-card img {
       width: 100%;
-      height: 180px;
+      height: 190px;
       object-fit: cover;
     }
 
     .speak-body {
-      padding: 18px;
+      padding: 20px;
     }
 
     .speak-body h3 {
-      font-size: 1.1rem;
-      color: var(--brand);
-      margin-bottom: 6px;
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+      color: var(--brand-dark);
     }
 
     .speak-body p {
-      font-size: 0.92rem;
       color: var(--muted);
-      line-height: 1.55;
+      font-size: 0.95rem;
     }
 
-    /* FOOTER */
+
+    /* ------------------------------
+       FOOTER
+    ------------------------------ */
+
     footer {
       text-align: center;
       padding: 30px 0;
-      font-size: 0.9rem;
-      color: var(--muted);
       margin-top: 50px;
+      color: var(--muted);
       border-top: 1px solid var(--border);
+      font-size: 0.95rem;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- THEME TOGGLE BUTTON -->
   <button id="themeToggle">🌙 Dark</button>
 
-  <!-- PAGE CONTAINER -->
   <div class="container">
 
     <!-- HERO SECTION -->
     <section class="hero">
+
       <div class="hero-left">
         <div class="hero-eyebrow">Cloud • DevOps • AI Infrastructure</div>
 
         <h1 class="hero-title">
-          Aman Patel — <span>Sr. ML DevOps Engineer</span> & Public Speaker
+          Aman Patel — <span>Sr. ML DevOps Engineer</span><br> & Public Speaker
         </h1>
 
         <p class="hero-subtitle">
-          Helping teams design scalable cloud platforms, automate infrastructure pipelines and adopt modern DevOps workflows.
+          I help teams design scalable cloud platforms, build automation pipelines, and adopt modern DevOps practices with clarity and confidence.
         </p>
 
-        <!-- TAGLINE -->
-        <div class="tagline">🚀 Let’s Code & Deploy</div>
+        <div class="tagline"> Let’s Code & Deploy</div>
 
         <div class="hero-buttons">
+
           <a href="#speaking" class="btn btn-primary">
             <i class="fa-solid fa-microphone-lines"></i>
             Book a Tech Talk
           </a>
 
-          <a href="https://amanpatelofficial.substack.com" target="_blank"
-             class="btn btn-dark">
+          <a href="https://amanpatelofficial.substack.com" class="btn btn-dark" target="_blank">
             Newsletter
           </a>
+
         </div>
       </div>
 
-      <!-- RIGHT PROFILE CARD -->
+      <!-- PROFILE CARD -->
       <div class="hero-right">
         <div class="profile-card">
           <img src="https://cdn.amansdlc.com/aiwithaman.png" alt="Aman Patel">
@@ -349,17 +372,18 @@
           <div class="profile-role">Sr. ML DevOps Engineer</div>
 
           <div class="profile-social">
-            <a href="https://www.linkedin.com/in/amanpatelofficial/"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/amanpatelit"><i class="fab fa-github"></i></a>
-            <a href="https://www.youtube.com/@amanpatelletscodeanddeploy"><i class="fab fa-youtube"></i></a>
-            <a href="https://amanpatelofficial.substack.com"><i class="fa-solid fa-rss"></i></a>
+            <a href="https://www.linkedin.com/in/amanpatelofficial/" class="linkedin"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/amanpatelit" class="github"><i class="fab fa-github"></i></a>
+            <a href="https://www.youtube.com/@amanpatelletscodeanddeploy" class="youtube"><i class="fab fa-youtube"></i></a>
+            <a href="https://amanpatelofficial.substack.com" class="substack"><i class="fa-solid fa-rss"></i></a>
           </div>
 
-          <a class="newsletter-btn" href="https://amanpatelofficial.substack.com" target="_blank">
+          <a href="https://amanpatelofficial.substack.com" target="_blank" class="newsletter-btn">
             <i class="fa-regular fa-bell"></i> Subscribe
           </a>
         </div>
       </div>
+
     </section>
 
     <!-- SPEAKING SECTION -->
@@ -367,33 +391,37 @@
       <div class="section-header">
         <h2 class="section-title">Speaking & Workshops</h2>
         <p class="section-sub">
-          Delivering practical, real-world sessions on DevOps, Cloud, Kubernetes and modern engineering careers.
+          Delivering practical, real-world sessions on DevOps, Cloud, Kubernetes, Automation, and modern engineering careers.
         </p>
       </div>
 
       <div class="speaking-grid">
 
         <div class="speak-card">
-          <img src="https://images.pexels.com/photos/3182762/pexels-photo-3182762.jpeg?auto=compress&cs=tinysrgb&w=1600">
+          <img
+            src="https://images.pexels.com/photos/3182762/pexels-photo-3182762.jpeg?auto=compress&cs=tinysrgb&w=1600">
           <div class="speak-body">
             <h3>🎤 Technical Talks</h3>
-            <p>Deep dives into CI/CD, Kubernetes, Observability, MLOps & production problem-solving.</p>
+            <p>Deep dives into CI/CD, Kubernetes, Observability, SRE, MLOps & real-world infra scaling.</p>
           </div>
         </div>
 
         <div class="speak-card">
-          <img src="https://images.pexels.com/photos/1181407/pexels-photo-1181407.jpeg?auto=compress&cs=tinysrgb&w=1600">
+          <img
+            src="https://images.pexels.com/photos/1181407/pexels-photo-1181407.jpeg?auto=compress&cs=tinysrgb&w=1600">
           <div class="speak-body">
             <h3>💼 Leadership Presentations</h3>
-            <p>Helping leaders align on cloud strategy, reliability engineering & DevOps cultural adoption.</p>
+            <p>Helping leaders understand cloud strategy, reliability engineering, cost optimization
+              & DevOps culture.</p>
           </div>
         </div>
 
         <div class="speak-card">
-          <img src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=1600">
+          <img
+            src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=1600">
           <div class="speak-body">
             <h3>🎓 Mentoring & Workshops</h3>
-            <p>Hands-on labs and career guidance for engineers & students in Cloud + DevOps fundamentals.</p>
+            <p>Hands-on labs, resume guidance, interview training & tech career development for students & engineers.</p>
           </div>
         </div>
 
@@ -407,27 +435,27 @@
   </footer>
 
   <script>
-    const themeBtn = document.getElementById("themeToggle");
-    const savedTheme = localStorage.getItem("theme");
+    const btn = document.getElementById("themeToggle");
+    const saved = localStorage.getItem("theme");
 
-    if (savedTheme === "dark") {
+    if (saved === "dark") {
       document.documentElement.setAttribute("data-theme", "dark");
-      themeBtn.textContent = "☀️ Light";
+      btn.textContent = "☀️ Light";
     }
 
-    themeBtn.onclick = () => {
-      const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+    btn.onclick = () => {
+      const dark = document.documentElement.getAttribute("data-theme") === "dark";
 
-      if (isDark) {
+      if (dark) {
         document.documentElement.removeAttribute("data-theme");
-        themeBtn.textContent = "🌙 Dark";
+        btn.textContent = "🌙 Dark";
         localStorage.setItem("theme", "light");
       } else {
         document.documentElement.setAttribute("data-theme", "dark");
-        themeBtn.textContent = "☀️ Light";
+        btn.textContent = "☀️ Light";
         localStorage.setItem("theme", "dark");
       }
-    }
+    };
   </script>
 
 </body>

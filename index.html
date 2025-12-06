@@ -30,9 +30,9 @@
       --text: #0f1115;
       --muted: #6d7280;
       --brand: #2563eb;
-      --card: #ffffff;
-      --border: rgba(0, 0, 0, 0.08);
-      --shadow: rgba(0, 0, 0, 0.06);
+      --card: rgba(255, 255, 255, 0.22);
+      --border: rgba(255, 255, 255, 0.28);
+      --shadow: rgba(0, 0, 0, 0.10);
     }
 
     /* DARK THEME */
@@ -41,9 +41,9 @@
       --text: #e6edf3;
       --muted: #9ca3af;
       --brand: #3ea6ff;
-      --card: #161b22;
-      --border: rgba(255, 255, 255, 0.08);
-      --shadow: rgba(0, 0, 0, 0.7);
+      --card: rgba(22, 27, 34, 0.35);
+      --border: rgba(255, 255, 255, 0.18);
+      --shadow: rgba(0, 0, 0, 0.55);
     }
 
     body {
@@ -63,7 +63,7 @@
       pointer-events: none;
     }
 
-    /* Soft Gradient Sky */
+    /* Gradient Sky */
     .bg-gradient {
       top: 0;
       left: 0;
@@ -103,16 +103,13 @@
       animation: floatBlob 9s ease-in-out infinite;
     }
 
-    /* ANIMATIONS */
     @keyframes floatBlob {
       0% {
         transform: translateY(0px) scale(1);
       }
-
       50% {
         transform: translateY(-35px) scale(1.08);
       }
-
       100% {
         transform: translateY(0px) scale(1);
       }
@@ -123,14 +120,13 @@
         opacity: 0.45;
         transform: scale(1);
       }
-
       100% {
         opacity: 0.6;
         transform: scale(1.05);
       }
     }
 
-    /* THEME TOGGLE BUTTON */
+    /* THEME BUTTON */
     .theme-toggle {
       position: fixed;
       top: 12px;
@@ -155,17 +151,61 @@
       width: 100%;
     }
 
+    /* ⭐ PREMIUM GLASS CARD */
     .card {
       width: 100%;
       max-width: 420px;
       background: var(--card);
-      padding: 26px 22px;
-      border-radius: 20px;
+      padding: 28px 24px;
+      border-radius: 22px;
       border: 1px solid var(--border);
-      box-shadow: 0 14px 35px var(--shadow);
+      box-shadow:
+        0 8px 28px var(--shadow),
+        inset 0 0 35px rgba(255, 255, 255, 0.15);
       text-align: center;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
       animation: fadeUp 0.7s ease-out;
-      backdrop-filter: blur(8px);
+      transition: 0.35s ease;
+      transform: translateY(0);
+      position: relative;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow:
+        0 14px 45px rgba(0, 0, 0, 0.22),
+        inset 0 0 45px rgba(255, 255, 255, 0.25);
+      border-color: rgba(255, 255, 255, 0.45);
+    }
+
+    /* Animated Border Glow */
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 22px;
+      padding: 2px;
+      background: linear-gradient(
+        135deg,
+        rgba(120, 180, 255, 0.55),
+        rgba(180, 220, 255, 0.35),
+        rgba(140, 200, 255, 0.55)
+      );
+      -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0;
+      transition: 0.4s ease;
+    }
+
+    .card:hover::after {
+      opacity: 1;
     }
 
     @keyframes fadeUp {
@@ -173,13 +213,13 @@
         opacity: 0;
         transform: translateY(12px);
       }
-
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
 
+    /* PROFILE */
     .profile-img {
       width: 120px;
       height: 120px;
@@ -221,22 +261,20 @@
         opacity: 0;
         transform: translateY(4px);
       }
-
       15% {
         opacity: 1;
         transform: translateY(0);
       }
-
       85% {
         opacity: 1;
       }
-
       100% {
         opacity: 0;
         transform: translateY(-4px);
       }
     }
 
+    /* SOCIAL ICONS */
     .social {
       display: flex;
       justify-content: center;
@@ -253,6 +291,7 @@
       transform: translateY(-3px);
     }
 
+    /* NEWSLETTER BUTTON */
     .newsletter-btn {
       width: 100%;
       padding: 14px 0;
@@ -276,6 +315,7 @@
       box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
     }
 
+    /* TALKS */
     .talks-section {
       text-align: center;
       padding: 40px 15px 25px;
@@ -292,7 +332,6 @@
       100% {
         transform: translateY(0);
       }
-
       50% {
         transform: translateY(-5px);
       }

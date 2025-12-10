@@ -1,229 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TechOps Examples</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aman Patel – Portfolio</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-
-  <style>
+<style>
     body {
-      margin: 0;
-      padding: 0;
-      background: #fadc3c; /* Yellow background like screenshot */
-      font-family: "Inter", sans-serif;
+        margin: 0;
+        font-family: "Inter", sans-serif;
+        background: linear-gradient(135deg, #e8f0ff, #f7fbff);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #1e1e1e;
     }
 
-    .container {
-      max-width: 1300px;
-      margin: 0 auto;
-      padding: 80px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    .card {
+        margin-top: 60px;
+        background: #ffffff;
+        width: 380px;
+        padding: 35px 30px;
+        border-radius: 20px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        text-align: center;
     }
 
-    /* LEFT SECTION */
-    .left {
-      max-width: 520px;
+    .avatar {
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+        border: 3px solid #e5eaf1;
     }
 
-    .logo {
-      width: 80px;
-      margin-bottom: 22px;
-    }
-
-    h3 {
-      font-size: 20px;
-      margin: 0;
-      font-weight: 600;
-    }
-
-    h1 {
-      font-size: 30px;
-      margin: 10px 0 20px;
-      font-weight: 700;
-      line-height: 1.35;
+    h2 {
+        margin: 0;
+        font-size: 26px;
+        font-weight: 700;
     }
 
     .subtext {
-      font-size: 15px;
-      opacity: 0.9;
-      line-height: 1.5;
-      margin-bottom: 28px;
+        margin-top: 5px;
+        font-size: 15px;
+        color: #666;
     }
 
-    /* EMAIL INPUT */
-    .email-box {
-      display: flex;
-      align-items: center;
-      background: #fff;
-      border-radius: 8px;
-      padding: 10px 14px;
-      width: 340px;
-      border: 1px solid #dfdfdf;
+    .links {
+        margin: 18px 0;
     }
 
-    .email-box input {
-      border: none;
-      outline: none;
-      font-size: 15px;
-      flex: 1;
+    .links a {
+        margin: 0 8px;
+        font-size: 22px;
+        text-decoration: none;
+        color: #1e1e1e;
     }
 
-    .button {
-      background: black;
-      color: white;
-      padding: 12px 22px;
-      margin-left: 10px;
-      border-radius: 8px;
-      font-size: 15px;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      cursor: pointer;
-      text-decoration: none;
+    .btn {
+        margin-top: 10px;
+        background: #1e63ff;
+        padding: 12px 20px;
+        color: white;
+        border-radius: 8px;
+        font-size: 15px;
+        text-decoration: none;
+        display: inline-block;
+        width: 80%;
+        font-weight: 600;
     }
 
-    .small-text {
-      margin-top: 10px;
-      font-size: 14px;
-      opacity: 0.8;
-    }
-
-    /* RIGHT SECTION */
-    .right {
-      max-width: 360px;
-      text-align: left;
-    }
-
-    .profile-img {
-      width: 85px;
-      height: 85px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 10px;
-    }
-
-    .profile-name {
-      font-size: 18px;
-      font-weight: 700;
-    }
-
-    .profile-role {
-      font-size: 13px;
-      opacity: 0.7;
-      margin-bottom: 18px;
-    }
-
-    .quote-box {
-      border: 3px solid black;
-      padding: 22px;
-      border-radius: 20px;
-      position: relative;
-      background: transparent;
-      font-size: 14px;
-      line-height: 1.5;
-      font-weight: 500;
-    }
-
-    .quote-box:before {
-      content: "“";
-      font-size: 40px;
-      font-weight: bold;
-      position: absolute;
-      top: -18px;
-      left: 12px;
-    }
-
-    .quote-box:after {
-      content: "”";
-      font-size: 40px;
-      font-weight: bold;
-      position: absolute;
-      bottom: -25px;
-      right: 12px;
-    }
-
-    .stars {
-      margin-top: 10px;
-      letter-spacing: 2px;
-    }
-
-    @media(max-width: 900px) {
-      .container {
-        flex-direction: column;
+    .footer-section {
+        margin-top: 60px;
         text-align: center;
-      }
-
-      .email-box {
-        margin: 0 auto;
-      }
-
-      .button {
-        margin: 10px auto;
-      }
-
-      .right {
-        margin-top: 40px;
-        text-align: center;
-      }
+        max-width: 600px;
+        color: #444;
     }
-  </style>
+
+    .footer-section h3 {
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    .footer-section p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .email {
+        margin-top: 5px;
+        font-size: 15px;
+        color: #1e63ff;
+        text-decoration: none;
+        display: block;
+    }
+
+    .copyright {
+        margin-top: 30px;
+        font-size: 12px;
+        color: #666;
+    }
+</style>
 </head>
 
 <body>
 
-  <div class="container">
+<div class="card">
+    <img src="https://cdn.amansdlc.com/aiwithaman.png" class="avatar" alt="Aman Patel">
 
-    <!-- LEFT SIDE -->
-    <div class="left">
-      <img src="https://cdn.amansdlc.com/aiwithaman.png" class="logo" />
+    <h2>Aman Patel</h2>
+    <div class="subtext">Sr. ML DevOps Engineer</div>
+    <div class="subtext" style="font-size: 14px;">Solving Infra Problems Daily</div>
 
-      <h3>TechOps Examples</h3>
-
-      <h1>
-        DevOps and Cloud newsletter to grow your real-world expertise — Practical examples, no fluff.
-      </h1>
-
-      <p class="subtext">
-        57,000+ receive 1 practical use case example, the best links to remote job opportunities,
-        and free learning resources.
-      </p>
-
-      <div style="display:flex; align-items:center;">
-        <div class="email-box">
-          <input type="text" placeholder="Your Email Here.." />
-        </div>
-
-        <a class="button">Start Great TechOps →</a>
-      </div>
-
-      <p class="small-text">(it's free)</p>
+    <div class="links">
+        <a href="#"><img height="22" src="https://cdn-icons-png.flaticon.com/512/174/174857.png"></a>
+        <a href="#"><img height="22" src="https://cdn-icons-png.flaticon.com/512/733/733553.png"></a>
+        <a href="#"><img height="22" src="https://cdn-icons-png.flaticon.com/512/733/733646.png"></a>
+        <a href="#"><img height="22" src="https://cdn-icons-png.flaticon.com/512/732/732200.png"></a>
     </div>
 
-    <!-- RIGHT SIDE -->
-    <div class="right">
-      <img src="https://cdn.amansdlc.com/aiwithaman.png" class="profile-img" />
+    <a class="btn" href="#">🔔 Subscribe to My Newsletter</a>
+</div>
 
-      <div class="profile-name">Mumshad Mannambeth</div>
-      <div class="profile-role">CEO @ KodeKloud</div>
+<div class="footer-section">
+    <h3>Talks & Presentations</h3>
+    <p>
+        I deliver sessions on DevOps, Cloud Infrastructure, AI-driven automation, platform engineering, 
+        and modern tech career strategies.
+    </p>
 
-      <div class="quote-box">
-        Govardhana has a knack for breaking down complex topics into engaging,
-        relatable content that resonates with the audience.
-        He nails it every time.
-        <b>Can't recommend him enough!</b>
+    <a class="email" href="mailto:amanpatel.itofficial@gmail.com">
+        amanpatel.itofficial@gmail.com
+    </a>
 
-        <div class="stars">★★★★★</div>
-      </div>
+    <div class="copyright">
+        © 2025 Aman Patel • Cloud, DevOps & AI Infrastructure
     </div>
-
-  </div>
+</div>
 
 </body>
-
 </html>

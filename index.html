@@ -1,142 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Aman Patel – Portfolio</title>
-
 <style>
-    body {
-        margin: 0;
-        font-family: "Inter", sans-serif;
-        background: linear-gradient(135deg, #e8f0ff, #f7fbff);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        color: #1e1e1e;
-    }
+  :root{
+    --bg1:#e8f0ff; --bg2:#f7fbff; --card:#fff; --accent:#1e63ff; --muted:#666;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+  html,body{height:100%;margin:0}
+  body{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    background:linear-gradient(135deg,var(--bg1),var(--bg2));
+    color:#111;
+    padding:48px 20px 80px;
+  }
 
-    .card {
-        margin-top: 60px;
-        background: #ffffff;
-        width: 380px;
-        padding: 35px 30px;
-        border-radius: 20px;
-        box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-        text-align: center;
-    }
+  .card{
+    width: min(420px, 92%);
+    background:var(--card);
+    border-radius:18px;
+    padding:34px 28px;
+    box-shadow: 0 10px 30px rgba(20,30,60,0.08);
+    text-align:center;
+  }
 
-    .avatar {
-        width: 110px;
-        height: 110px;
-        border-radius: 50%;
-        margin-bottom: 20px;
-        border: 3px solid #e5eaf1;
-    }
+  .avatar{
+    width:112px;height:112px;border-radius:50%;
+    object-fit:cover;border:4px solid #eef3fb;display:inline-block;margin-bottom:18px;
+  }
 
-    h2 {
-        margin: 0;
-        font-size: 26px;
-        font-weight: 700;
-    }
+  h1{font-size:26px;margin:6px 0 0;font-weight:700}
+  .role{color:var(--muted);margin-top:6px;font-size:14px}
+  .tagline{color:#8a8a8a;font-size:13px;margin-top:6px;font-style:italic}
 
-    .subtext {
-        margin-top: 5px;
-        font-size: 15px;
-        color: #666;
-    }
+  .socials{
+    margin:16px 0;display:flex;gap:14px;justify-content:center;align-items:center
+  }
+  .socials a{
+    display:inline-flex;align-items:center;justify-content:center;text-decoration:none;
+  }
+  .socials img{width:24px;height:24px;display:block}
 
-    .links {
-        margin: 18px 0;
-    }
+  .btn{
+    display:inline-block;
+    width:85%;
+    max-width:320px;
+    margin-top:12px;
+    background:linear-gradient(180deg,var(--accent),#174de6);
+    color:#fff;padding:12px 16px;border-radius:10px;text-decoration:none;
+    font-weight:600;font-size:15px;box-shadow:0 6px 18px rgba(30,99,255,0.18);
+  }
 
-    .links a {
-        margin: 0 8px;
-        font-size: 22px;
-        text-decoration: none;
-        color: #1e1e1e;
-    }
-
-    .btn {
-        margin-top: 10px;
-        background: #1e63ff;
-        padding: 12px 20px;
-        color: white;
-        border-radius: 8px;
-        font-size: 15px;
-        text-decoration: none;
-        display: inline-block;
-        width: 80%;
-        font-weight: 600;
-    }
-
-    .footer-section {
-        margin-top: 60px;
-        text-align: center;
-        max-width: 600px;
-        color: #444;
-    }
-
-    .footer-section h3 {
-        font-size: 20px;
-        font-weight: 700;
-    }
-
-    .footer-section p {
-        font-size: 14px;
-        line-height: 1.5;
-    }
-
-    .email {
-        margin-top: 5px;
-        font-size: 15px;
-        color: #1e63ff;
-        text-decoration: none;
-        display: block;
-    }
-
-    .copyright {
-        margin-top: 30px;
-        font-size: 12px;
-        color: #666;
-    }
+  .footer{
+    margin-top:56px;
+    text-align:center;
+    max-width:880px;color:#444;
+  }
+  .footer h2{font-size:18px;margin:0 0 10px}
+  .footer p{margin:0 0 10px;color:#666;line-height:1.5;font-size:14px}
+  .email{color:var(--accent);text-decoration:none;font-weight:600}
+  .copyright{margin-top:18px;color:#8a8a8a;font-size:12px}
+  @media(min-width:900px){ body{padding-top:80px} .card{margin-top:8px} }
 </style>
 </head>
-
 <body>
 
-<div class="card">
-    <img src="https://cdn.amansdlc.com/aiwithaman.png" class="avatar" alt="Aman Patel">
+  <div class="card">
+    <img class="avatar" src="https://cdn.amansdlc.com/aiwithaman.png" alt="Aman Patel avatar">
+    <h1>Aman Patel</h1>
+    <div class="role">Sr. ML DevOps Engineer</div>
+    <div class="tagline">Solving Infra Problems Daily</div>
 
-    <h2>Aman Patel</h2>
-    <div class="subtext">Sr. ML DevOps Engineer</div>
-    <div class="subtext" style="font-size: 14px;">Solving Infra Problems Daily</div>
+    <div class="socials">
 
-    <div class="links">
-        <a href="#"><img height="22" src="https://cdn-icons-png.flaticon.com/512/174/174857.png"></a>
-        <a href="#"><img height="22" src="https://cdn-icons-png.flaticon.com/512/733/733553.png"></a>
-        <a href="#"><img height="22" src="https://cdn-icons-png.flaticon.com/512/733/733646.png"></a>
-        <a href="#"><img height="22" src="https://cdn-icons-png.flaticon.com/512/732/732200.png"></a>
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/amanpatelofficial/" target="_blank" title="LinkedIn">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+      </a>
+
+      <!-- GitHub -->
+      <a href="https://github.com/amanpatelit" target="_blank" title="GitHub">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub">
+      </a>
+
+      <!-- YouTube (UPDATED) -->
+      <a href="https://www.youtube.com/@techwithamanpatel" target="_blank" title="YouTube">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">
+      </a>
+
+      <!-- RSS -->
+      <a href="#" title="RSS">
+        <img src="https://cdn-icons-png.flaticon.com/512/2504/2504924.png" alt="RSS">
+      </a>
+
     </div>
 
-    <a class="btn" href="#">🔔 Subscribe to My Newsletter</a>
-</div>
-
-<div class="footer-section">
-    <h3>Talks & Presentations</h3>
-    <p>
-        I deliver sessions on DevOps, Cloud Infrastructure, AI-driven automation, platform engineering, 
-        and modern tech career strategies.
-    </p>
-
-    <a class="email" href="mailto:amanpatel.itofficial@gmail.com">
-        amanpatel.itofficial@gmail.com
+    <!-- Substack Subscribe Button -->
+    <a class="btn" href="https://amanpatelofficial.substack.com/" target="_blank">
+      🔔 Subscribe to Newsletters (Substack)
     </a>
+  </div>
 
-    <div class="copyright">
-        © 2025 Aman Patel • Cloud, DevOps & AI Infrastructure
-    </div>
-</div>
+  <div class="footer">
+    <h2>Talks &amp; Presentations</h2>
+    <p>I deliver sessions on DevOps, Cloud Infrastructure, AI-driven automation, platform engineering, and modern tech career strategies.</p>
+
+    <a class="email" href="mailto:amanpatel.itofficial@gmail.com">amanpatel.itofficial@gmail.com</a>
+
+    <div class="copyright">© 2025 Aman Patel • Cloud, DevOps &amp; AI Infrastructure</div>
+  </div>
 
 </body>
 </html>

@@ -32,11 +32,7 @@
   }
 
   /* ---------- GLOBAL ---------- */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
   html, body {
     height: 100%;
@@ -68,10 +64,6 @@
     cursor: pointer;
     font-size: 13px;
     transition: var(--transition);
-  }
-
-  .toggle-btn:hover {
-    opacity: 0.8;
   }
 
   /* ---------- CARD ---------- */
@@ -106,12 +98,22 @@
   .role { color: var(--muted); font-size: 14px; margin-top: 6px; }
   .tagline { color: var(--muted); font-size: 13px; font-style: italic; margin-top: 6px; }
 
+  /* ---------- FOLLOW TITLE ---------- */
+  .follow-title {
+    margin-top: 18px;
+    margin-bottom: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--muted);
+    letter-spacing: 0.3px;
+  }
+
   /* ---------- SOCIAL ICONS ---------- */
   .socials {
     display: flex;
     justify-content: center;
     gap: 14px;
-    margin: 16px 0;
+    margin: 14px 0 18px 0;
   }
 
   .socials img {
@@ -164,20 +166,9 @@
   }
 
   .footer p { color: var(--muted); font-size: 14px; margin: 10px 0; }
+  .email { color: var(--accent); font-weight: 600; text-decoration: none; }
+  .copyright { margin-top: 18px; font-size: 12px; color: var(--muted); }
 
-  .email {
-    display: inline-block;
-    margin-top: 8px;
-    color: var(--accent);
-    font-weight: 600;
-    text-decoration: none;
-  }
-
-  .copyright {
-    margin-top: 18px;
-    font-size: 12px;
-    color: var(--muted);
-  }
 </style>
 </head>
 
@@ -198,7 +189,12 @@
   <div class="role">Sr. AI DevOps Engineer</div>
   <div class="tagline">Solving Infra Problems Daily</div>
 
+  <!-- Follow Title -->
+  <div class="follow-title">Follow me on</div>
+
+  <!-- Social Icons -->
   <div class="socials">
+
     <a href="https://www.linkedin.com/in/amanpatelofficial/" target="_blank">
       <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
     </a>
@@ -214,8 +210,10 @@
     <a href="#">
       <img src="https://cdn-icons-png.flaticon.com/512/2504/2504924.png" alt="RSS">
     </a>
+
   </div>
 
+  <!-- Newsletter Button -->
   <a class="btn" href="https://amannewsletter.substack.com/" target="_blank">
     🔔 Subscribe to Newsletters
   </a>

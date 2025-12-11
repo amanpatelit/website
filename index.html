@@ -1,236 +1,92 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Aman Patel — AI DevOps Engineer</title>
+  <style>
+    body { margin:0; font-family: ui-serif, Georgia, serif; background:#f7f0e6; color:#2b2b2b; }
+    header { display:flex; justify-content:space-between; padding:22px 60px; font-size:18px; }
+    header a { margin-left:24px; text-decoration:none; color:#2b2b2b; font-weight:600; }
+    header a.active { color:#b30000; border-bottom:2px solid #b30000; padding-bottom:4px; }
+    hr { opacity:0.25; }
 
-<title>Aman Patel – Sr. AI DevOps Engineer</title>
+    .container { max-width:1180px; margin:auto; padding:40px 60px; }
 
-<!-- Favicon -->
-<link rel="icon" type="image/png" href="https://cdn.amansdlc.com/aiwithaman.png">
+    /* Hero */
+    .hero { display:flex; gap:50px; align-items:flex-start; }
+    .hero img { width:340px; border-radius:18px; }
+    h1 { font-size:44px; margin:0; }
+    .tagline { font-size:24px; margin-top:8px; font-style:italic; color:#c0392b; font-weight:600; }
+    p { font-size:18px; line-height:1.65; }
 
-<style>
-  /* ---------- THEME VARIABLES ---------- */
-  :root {
-    --bg: #f3f7ff;
-    --bg2: #ffffff;
-    --text: #111;
-    --muted: #666;
-    --accent: #1e63ff;
-    --card: #ffffff;
-    --radius: 18px;
-    --transition: 0.3s ease;
-  }
+    /* Social Buttons */
+    .social-buttons { display:flex; gap:16px; margin-top:25px; }
+    .social-buttons a { border:1px solid #999; padding:10px 20px; border-radius:12px; background:white; text-decoration:none; font-size:16px; color:#2b2b2b; font-weight:600; }
 
-  body.dark {
-    --bg: #0f1117;
-    --bg2: #1a1c23;
-    --text: #eaeaea;
-    --muted: #9b9b9b;
-    --accent: #4c8bff;
-    --card: #1a1c23;
-  }
+    /* Sections */
+    h2 { margin-top:50px; font-size:28px; }
+    ul { font-size:17px; line-height:1.75; }
+    a { color:#3f51b5; text-decoration:none; }
 
-  /* ---------- GLOBAL ---------- */
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  html, body {
-    height: 100%;
-    font-family: Inter, system-ui, sans-serif;
-    background: linear-gradient(135deg, var(--bg), var(--bg2));
-    color: var(--text);
-    transition: background var(--transition), color var(--transition);
-  }
-
-  body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  /* ---------- THEME TOGGLE ---------- */
-  .toggle-container {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-  }
-
-  .toggle-btn {
-    background: var(--card);
-    color: var(--text);
-    border: 1px solid #ccc;
-    padding: 8px 16px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 13px;
-    transition: var(--transition);
-  }
-
-  /* ---------- CARD ---------- */
-  .card {
-    margin-top: 80px;
-    width: min(420px, 92%);
-    background: var(--card);
-    border-radius: var(--radius);
-    padding: 34px 28px;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    transition: background var(--transition);
-  }
-
-  /* ---------- AVATAR FLOAT ---------- */
-  .avatar {
-    width: 112px;
-    height: 112px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid rgba(255,255,255,0.4);
-    margin-bottom: 18px;
-    animation: float 3s ease-in-out infinite;
-  }
-
-  @keyframes float {
-    0%,100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-  }
-
-  h1 { font-size: 26px; font-weight: 700; }
-  .role { color: var(--muted); font-size: 14px; margin-top: 6px; }
-  .tagline { color: var(--muted); font-size: 13px; font-style: italic; margin-top: 6px; }
-
-  /* ---------- FOLLOW TITLE ---------- */
-  .follow-title {
-    margin-top: 18px;
-    margin-bottom: 4px;
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--muted);
-    letter-spacing: 0.3px;
-  }
-
-  /* ---------- SOCIAL ICONS ---------- */
-  .socials {
-    display: flex;
-    justify-content: center;
-    gap: 14px;
-    margin: 14px 0 18px 0;
-  }
-
-  .socials img {
-    width: 24px;
-    transition: var(--transition);
-  }
-
-  .socials img:hover {
-    transform: translateY(-4px) scale(1.15);
-    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));
-  }
-
-  /* ---------- BUTTON ---------- */
-  .btn {
-    display: inline-block;
-    width: 85%;
-    padding: 12px;
-    background: var(--accent);
-    color: #fff;
-    border-radius: 10px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: var(--transition);
-  }
-
-  .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(30,99,255,0.28);
-  }
-
-  /* ---------- FOOTER ---------- */
-  .footer {
-    margin-top: auto;
-    padding: 40px 20px;
-    text-align: center;
-    max-width: 900px;
-    width: 100%;
-  }
-
-  .mic {
-    font-size: 34px;
-    color: var(--accent);
-    margin-top: -20px;
-    animation: pulse 1.8s infinite ease-in-out;
-  }
-
-  @keyframes pulse {
-    0%,100% { transform: scale(1); opacity: 0.8; }
-    50% { transform: scale(1.12); opacity: 1; }
-  }
-
-  .footer p { color: var(--muted); font-size: 14px; margin: 10px 0; }
-  .email { color: var(--accent); font-weight: 600; text-decoration: none; }
-  .copyright { margin-top: 18px; font-size: 12px; color: var(--muted); }
-
-</style>
+    @media(max-width:900px){
+      .hero { flex-direction:column; }
+      .hero img { width:100%; max-width:360px; }
+    }
+  </style>
 </head>
-
 <body>
 
-<!-- Theme Toggle -->
-<div class="toggle-container">
-  <button class="toggle-btn" onclick="document.body.classList.toggle('dark')">
-    🌙 Night / ☀️ Day
-  </button>
-</div>
+<header>
+  <div style="font-weight:700; font-size:22px;">Aman Patel</div>
+  <nav>
+    <a href="#" class="active">Home</a>
+    <a href="blogs.html">Blogs</a>
+    <a href="papers.html">Papershelf</a>
+    <a href="books.html">Bookshelf</a>
+    <a href="courses.html">Courses</a>
+    <a href="talks.html">Talks</a>
+  </nav>
+</header>
+<hr />
 
-<!-- Profile Card -->
-<div class="card">
-  <img class="avatar" src="https://cdn.amansdlc.com/aiwithaman.png" alt="Aman Patel">
+<div class="container">
+  <div class="hero">
 
-  <h1>Aman Patel</h1>
-  <div class="role">Sr. AI DevOps Engineer</div>
-  <div class="tagline">Solving Infra Problems Daily</div>
+    <div>
+      <h1>Hey, I am Aman</h1>
+      <div class="tagline">curious, tinkerer, and explorer</div>
 
-  <!-- Follow Title -->
-  <div class="follow-title">Follow me on</div>
+      <p>I am a DevOps & Cloud Engineer passionate about scalable cloud infrastructure, Kubernetes, automation, CI/CD, and production-grade distributed systems. I help companies design, deploy, and scale their backend and cloud-native architectures.</p>
 
-  <!-- Social Icons -->
-  <div class="socials">
+      <p>I have hands-on experience with AWS, GCP, EKS, Docker, Jenkins, GitOps, monitoring systems, and infra automation. I also work with global teams, build developer platforms, and solve real-world production challenges.</p>
 
-    <a href="https://www.linkedin.com/in/amanpatelofficial/" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
-    </a>
+      <p>I keep diving deeper into engineering, DevOps, cloud, and security — and I share my learnings across my blog, open-source work, and YouTube channel.</p>
 
-    <a href="https://github.com/amanpatelit" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub">
-    </a>
+      <div class="social-buttons">
+        <a href="https://www.youtube.com/@techwithamanpatel" target="_blank">YouTube</a>
+        <a href="https://www.linkedin.com/in/amanpatelofficial/" target="_blank">LinkedIn</a>
+        <a href="https://github.com/amanpatelit" target="_blank">GitHub</a>
+      </div>
+    </div>
 
-    <a href="https://www.youtube.com/@techwithamanpatel" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">
-    </a>
-
-    <a href="#">
-      <img src="https://cdn-icons-png.flaticon.com/512/2504/2504924.png" alt="RSS">
-    </a>
-
+    <img src="https://cdn.amansdlc.com/aiwithaman.png" alt="Aman Patel" />
   </div>
 
-  <!-- Newsletter Button -->
-  <a class="btn" href="https://amannewsletter.substack.com/" target="_blank">
-    🔔 Subscribe to Newsletters
-  </a>
-</div>
+  <h2>Recent blog posts • <a href="https://amannewsletter.substack.com/" target="_blank">Visit Newsletter →</a> • <a href="#">Full archive →</a></h2>
+  <ul>
+    <li><b>Dec 2025:</b> Scaling EKS Clusters for High Traffic</li>
+    <li><b>Nov 2025:</b> Advanced CI/CD Pipeline Architecture</li>
+    <li><b>Oct 2025:</b> Securing AWS Infrastructure with Zero Trust</li>
+  </ul>
 
-<!-- Footer -->
-<div class="footer">
-  <div class="mic">🎤</div>
+  <h2>Recent papers I studied</h2>
+  <ul>
+    <li>DeepSeekMath: Towards Better LLM Reasoning</li>
+    <li>How LLM Inference Pipelines Work</li>
+    <li>Thread Safety Design Patterns</li>
+  </ul>
 
-  <h2>Talks & Presentations</h2>
-  <p>I deliver sessions on DevOps, Cloud Infrastructure, AI automation, platform engineering, and modern tech career strategies.</p>
-
-  <a class="email" href="mailto:amanpatel.itofficial@gmail.com">amanpatel.itofficial@gmail.com</a>
-
-  <div class="copyright">
-    © 2025 Aman Patel • Cloud, DevOps & AI Infrastructure
-  </div>
 </div>
 
 </body>

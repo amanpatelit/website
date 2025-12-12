@@ -5,18 +5,18 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.amansdlc.com/aiwithaman.png" />
+  <link rel="icon" type="image/png" href="https://cdn.amansdlc.com/aiwithaman.png" />
 
-  <title>Aman Patel — AI DevOps Engineer | AWS, Kubernetes, Cloud Automation</title>
+  <title>Aman Patel Sr.AI DevOps Engineer | AWS, Kubernetes, Cloud Automation</title>
 
   <meta name="description"
-    content="Aman Patel is an Sr. AI DevOps Engineer specializing in AWS, Kubernetes, EKS, DevSecOps, Cloud Automation, CI/CD, and scalable production systems." />
+    content="Aman Patel is an Sr. AI DevOps Engineer specializing in AWS, Kubernetes, DevSecOps, CI/CD, Cloud Automation, and scalable distributed systems." />
 
   <link rel="canonical" href="https://amanops.com/" />
 
-  <meta property="og:title" content="Aman Patel Sr. DevOps Engineer" />
+  <meta property="og:title" content="Aman Patel Sr. AI DevOps Engineer" />
   <meta property="og:description"
-    content="Cloud, DevOps & AI-driven infrastructure specialist. AWS Community Builder, CNCF Speaker, and Kubernetes practitioner." />
+    content="Cloud, DevOps & AI-driven infrastructure specialist. AWS Community Builder, CNCF Speaker, Kubernetes practitioner." />
   <meta property="og:image" content="https://cdn.amansdlc.com/aiwithaman.png" />
   <meta name="twitter:card" content="summary_large_image" />
 
@@ -33,7 +33,7 @@
         "https://github.com/amanpatelit",
         "https://www.youtube.com/@techwithamanpatel"
       ],
-      "description": "DevOps & Cloud Engineer focusing on scalable architectures, Kubernetes ecosystems, CI/CD automation and DevSecOps."
+      "description": "DevOps & Cloud Engineer focusing on Kubernetes, AWS, CI/CD automation, Cloud Security, and scalable infrastructure."
     }
   </script>
 
@@ -57,14 +57,16 @@
     }
 
     header a {
-      margin-left: 24px;
       text-decoration: none;
+      margin-left: 24px;
       color: #2b2b2b;
       font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
     }
 
-    header a:hover,
-    header a.active {
+    header a.active,
+    header a:hover {
       color: #c0392b;
     }
 
@@ -74,12 +76,12 @@
       padding: 40px 60px;
     }
 
-    /* -------- HERO (Arpit style) -------- */
+    /* ---------------- HERO ---------------- */
 
     .hero {
       display: flex;
-      justify-content: space-between;
       align-items: flex-start;
+      justify-content: space-between;
       gap: 60px;
       padding-top: 40px;
     }
@@ -98,33 +100,33 @@
       border-radius: 24px;
     }
 
-    .hero h1 {
+    h1 {
       font-size: 54px;
       margin: 0;
       font-weight: 700;
     }
 
     .tagline {
-      font-size: 26px;
       margin-top: 10px;
-      color: #c0392b;
-      font-style: italic;
+      font-size: 26px;
       font-weight: 700;
+      font-style: italic;
+      color: #c0392b;
     }
 
     .hero p {
       font-size: 18px;
-      line-height: 1.7;
+      line-height: 1.75;
       margin-bottom: 18px;
     }
 
-    /* -------- Social Buttons (Arpit style) -------- */
+    /* ----------- SOCIAL BUTTONS (Arpit Style) ----------- */
 
     .social-buttons {
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
-      margin-top: 30px;
+      margin-top: 28px;
     }
 
     .social-buttons a {
@@ -132,10 +134,10 @@
       border: 1px solid #d8d1c5;
       padding: 10px 18px;
       border-radius: 12px;
+      text-decoration: none;
       font-size: 16px;
       color: #2b2b2b;
       font-weight: 600;
-      text-decoration: none;
       display: inline-flex;
       align-items: center;
       gap: 10px;
@@ -145,47 +147,47 @@
       background: #e8dfd5;
     }
 
-    /* -------- Featured Blog Card -------- */
+    /* ----------- FEATURED BLOG ----------- */
 
     .featured-blog {
-      border: 1px solid #d8d1c5;
-      background: white;
+      margin-top: 50px;
       padding: 22px;
+      background: #ffffff;
+      border: 1px solid #d8d1c5;
       border-radius: 14px;
-      margin-top: 28px;
     }
 
     .featured-blog h3 {
-      margin: 0;
       font-size: 22px;
+      margin: 0;
       font-weight: 700;
     }
 
     .featured-blog p {
-      margin: 10px 0;
       font-size: 17px;
-      line-height: 1.6;
+      line-height: 1.65;
       color: #444;
+      margin-top: 10px;
     }
 
     .featured-blog a {
       display: inline-block;
-      margin-top: 12px;
+      margin-top: 14px;
       padding: 10px 18px;
-      border-radius: 10px;
       background: #c0392b;
-      color: white;
+      color: #fff;
+      border-radius: 10px;
       font-weight: 600;
       text-decoration: none;
     }
 
     .featured-blog a:hover {
-      background: #a83025;
+      background: #a83024;
     }
 
-    /* -------- Responsive -------- */
+    /* ---------------- RESPONSIVE ---------------- */
 
-    @media (max-width: 900px) {
+    @media(max-width: 900px) {
       .hero {
         flex-direction: column-reverse;
         gap: 40px;
@@ -211,8 +213,8 @@
       document.getElementById(id).classList.add("active");
 
       document.querySelectorAll("header a[data-page]").forEach(a => a.classList.remove("active"));
-      const link = document.querySelector(`[data-page="${id}"]`);
-      if (link) link.classList.add("active");
+      const active = document.querySelector(`[data-page="${id}"]`);
+      if (active) active.classList.add("active");
 
       scrollTo({ top: 0, behavior: "smooth" });
     }
@@ -231,9 +233,9 @@
     </nav>
   </header>
 
-  <!-- ===============================
+  <!-- ================================
        HOME PAGE
-  =============================== -->
+  ================================ -->
   <div id="home-section" class="container page active">
 
     <div class="hero">
@@ -248,20 +250,20 @@
         </p>
 
         <p>
-          I work across AWS, GCP, Docker, Kubernetes, Jenkins, GitOps, observability stacks, and cloud security.
-          I collaborate globally with engineering teams to build resilient and scalable platforms.
+          My expertise spans AWS, GCP, Kubernetes, Docker, Jenkins, GitOps, observability stacks, and cloud security.
+          I collaborate with global engineering teams to build resilient and scalable cloud platforms.
         </p>
 
         <p>
-          I also share my learnings through blogs, YouTube content, open-source work, and community talks.
-          I deliver CNCF webinars and contribute proudly as an <strong>AWS Community Builder</strong>.
+          I share my learnings through blogs, YouTube content, open-source, and community talks.
+          I also deliver CNCF webinars and contribute proudly as an <strong>AWS Community Builder</strong>.
         </p>
 
-        <!-- SOCIAL ICON BUTTONS -->
+        <!-- SOCIAL BUTTONS -->
         <div class="social-buttons">
 
           <a href="https://www.youtube.com/@techwithamanpatel" target="_blank">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
               <path
                 d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4S5.12 4 3.4 4.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.94 2C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" />
               <polygon points="9.75 15.02 15.5 12 9.75 8.98" />
@@ -270,7 +272,7 @@
           </a>
 
           <a href="https://twitter.com" target="_blank">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
               <path
                 d="M22 4s-.7 2-3 3c0 8-6 14-14 14a14.8 14.8 0 0 1-7-2s5 0 7-3c-3 0-4-3-4-3s2 1 4 0c-3-1-3-4-3-4s2 1 4 1c-3-2-2-5-2-5s4 5 9 5c0-3 3-5 3-5z" />
             </svg>
@@ -305,26 +307,13 @@
 
     </div>
 
-    <!-- ----------------------------------------
-         RECENT BLOG POSTS
-    ----------------------------------------- -->
-    <h2 style="margin-top:50px; font-size:28px;">Recent Blog Posts</h2>
-    <ul style="font-size:18px; line-height:1.7;">
-      <li><strong>Dec 2025:</strong> Scaling EKS Clusters for High Traffic</li>
-      <li><strong>Nov 2025:</strong> Advanced CI/CD Pipeline Architecture</li>
-      <li><strong>Oct 2025:</strong> Securing AWS Infrastructure with Zero Trust</li>
-    </ul>
-
-    <!-- ----------------------------------------
-         FEATURED BLOG (AWS COMMUNITY BUILDER)
-    ----------------------------------------- -->
+    <!-- ========= FEATURED AWS BLOG ========= -->
     <h2 style="margin-top:50px; font-size:28px;">Featured Blog</h2>
 
     <div class="featured-blog">
       <h3>How to Become an AWS Community Builder in 2026</h3>
-      <p style="color:#666; margin-top:5px;">
-        by <strong>Aman Patel</strong> on <em>AWS Builder Center</em> — Dec 4, 2025
-      </p>
+      <p style="color:#666;">by <strong>Aman Patel</strong> on <em>AWS Builder Center</em> — Dec 4, 2025</p>
+
       <p>
         A complete guide to understanding the AWS Community Builder program — what it is, who can apply,
         the benefits, selection criteria, and how to prepare a strong application for the 2026 cohort.
@@ -338,9 +327,9 @@
 
   </div>
 
-  <!-- ===============================
+  <!-- ================================
        TALKS PAGE
-  =============================== -->
+  ================================ -->
   <div id="talks-section" class="container page">
 
     <h1 style="text-align:center; font-size:42px; font-weight:700;">Talks and Presentations</h1>
@@ -352,11 +341,12 @@
     </p>
 
     <img src="https://cdn.amansdlc.com/AIwithDevOpsTalks.png" style="
-        width:100%;
-        max-width:780px;
-        border-radius:20px;
-        display:block;
-        margin:40px auto;">
+      width:100%;
+      max-width:780px;
+      border-radius:20px;
+      display:block;
+      margin:40px auto;">
+
     <p style="text-align:center; opacity:0.7;">Aman Community Session</p>
 
   </div>

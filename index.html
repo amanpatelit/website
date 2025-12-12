@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
 
   <!-- Browser Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.amansdlc.com/aiwithaman.png" />
@@ -95,8 +95,10 @@
       padding: 40px 60px;
     }
 
+    /* FIXED IMAGE LEFT ON DESKTOP */
     .hero {
       display: flex;
+      flex-direction: row !important;  /* FORCE image left */
       gap: 50px;
       align-items: flex-start;
       flex-wrap: wrap;
@@ -195,11 +197,21 @@
       background: #e3e3e3;
     }
 
+    /* Mobile View */
     @media(max-width: 900px) {
       header { padding: 20px; }
       .container { padding: 30px 20px; }
-      .hero { flex-direction: column; text-align: center; }
-      .hero img { margin: auto; width: 100%; max-width: 360px; }
+
+      .hero {
+        flex-direction: column !important; /* Mobile = image on top */
+        text-align: center;
+      }
+
+      .hero img {
+        margin: auto;
+        width: 100%;
+        max-width: 360px;
+      }
     }
 
     .page { display: none; }
@@ -242,11 +254,11 @@
 <div id="home-section" class="container page active">
 
   <div class="hero">
-    <!-- IMAGE ON LEFT -->
-    <img src="https://cdn.amansdlc.com/aiwithaman.png"
-         alt="Aman Patel AI DevOps Engineer" loading="lazy" />
 
-    <!-- TEXT ON RIGHT -->
+    <!-- IMAGE LEFT -->
+    <img src="https://cdn.amansdlc.com/aiwithaman.png" alt="Aman Patel AI DevOps Engineer" loading="lazy" />
+
+    <!-- TEXT RIGHT -->
     <div>
       <h1>Hey, I am Aman</h1>
       <div class="tagline">curious, tinkerer, and explorer</div>
@@ -274,6 +286,7 @@
         <a href="https://github.com/amanpatelit" target="_blank">GitHub</a>
       </div>
     </div>
+
   </div>
 
   <h2>Recent Blog Posts</h2>
@@ -318,6 +331,7 @@
       <a href="https://www.youtube.com/@techwithamanpatel" target="_blank">YouTube</a>
     </div>
   </div>
+
 </div>
 
 </body>

@@ -21,6 +21,12 @@
       justify-content:space-between;
       align-items:center;
       padding:24px 64px;
+      position:relative;
+    }
+
+    header nav{
+      display:flex;
+      align-items:center;
     }
 
     header nav a{
@@ -34,6 +40,21 @@
     header nav a.active,
     header nav a:hover{
       color:#c0392b;
+    }
+
+    /* ---------- HAMBURGER ---------- */
+    .hamburger{
+      display:none;
+      flex-direction:column;
+      gap:6px;
+      cursor:pointer;
+    }
+
+    .hamburger span{
+      width:26px;
+      height:3px;
+      background:#1f1f1f;
+      border-radius:3px;
     }
 
     /* ---------- COMMON ---------- */
@@ -75,7 +96,6 @@
       max-width:640px;
     }
 
-    /* ---------- FOLLOW TEXT ---------- */
     .follow-text{
       margin-top:26px;
       margin-bottom:10px;
@@ -190,6 +210,32 @@
       .container{padding:20px;}
       .hero{grid-template-columns:1fr;}
       h1{font-size:44px;}
+
+      nav{
+        position:absolute;
+        top:70px;
+        right:20px;
+        background:#ffffff;
+        border:1px solid #e3dbcf;
+        border-radius:14px;
+        padding:16px 20px;
+        display:none;
+        flex-direction:column;
+        gap:16px;
+        box-shadow:0 10px 30px rgba(0,0,0,0.08);
+      }
+
+      nav.show{
+        display:flex;
+      }
+
+      nav a{
+        margin:0;
+      }
+
+      .hamburger{
+        display:flex;
+      }
     }
   </style>
 
@@ -201,7 +247,12 @@
       document.querySelectorAll('nav a[data-page]').forEach(a=>a.classList.remove('active'));
       document.querySelector(`[data-page="${id}"]`).classList.add('active');
 
+      document.getElementById('mobileNav').classList.remove('show');
       window.scrollTo({top:0,behavior:'smooth'});
+    }
+
+    function toggleMenu(){
+      document.getElementById('mobileNav').classList.toggle('show');
     }
   </script>
 </head>
@@ -210,7 +261,14 @@
 
 <header>
   <div style="font-weight:700;font-size:22px;">Aman Patel</div>
-  <nav>
+
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <nav id="mobileNav">
     <a data-page="home" class="active" onclick="showPage('home')">Home</a>
     <a href="https://amannewsletter.substack.com/" target="_blank">Newsletters</a>
     <a data-page="talks" onclick="showPage('talks')">Talks</a>
@@ -234,22 +292,19 @@
 
         <p>
           My expertise spans AWS, GCP, Kubernetes, Docker, Jenkins, GitOps,
-          observability stacks, and cloud security. I collaborate with global
-          engineering teams to build resilient cloud platforms.
+          observability stacks, and cloud security.
         </p>
 
         <p>
           I share my learnings through blogs, YouTube content, open-source projects,
-          and community talks. I also attend CNCF webinars and contribute to the cloud community as well as 
-          <strong>AWS Community Builder</strong>.
+          and community talks as an <strong>AWS Community Builder</strong>.
         </p>
 
-        <!-- ✅ FOLLOW TEXT ADDED -->
         <p class="follow-text">Follow me here for new updates</p>
 
         <div class="socials">
           <a href="https://www.youtube.com/@techwithamanpatel" target="_blank">▶ YouTube</a>
-          <a href="https://amannewsletter.substack.com" target="_blank"> News</a>
+          <a href="https://amannewsletter.substack.com" target="_blank">📰 Newsletter</a>
           <a href="https://www.linkedin.com/in/amanpatelofficial/" target="_blank">in LinkedIn</a>
           <a href="https://github.com/amanpatelit" target="_blank">🐙 GitHub</a>
         </div>
@@ -260,29 +315,6 @@
       </div>
     </section>
 
-    <h2 class="section-title">Featured Blogs</h2>
-
-    <div class="blog-card">
-      <h3>How to Become an AWS Community Builder in 2026</h3>
-      <div class="blog-meta">AWS Builder Center</div>
-      <p>A complete guide covering eligibility, benefits, and selection criteria.</p>
-      <a href="https://builder.aws.com/content/36PZz34pdR59WVLoxYZp79gOJCq/how-to-become-an-aws-community-builder-in-2026" target="_blank">Read Full Article</a>
-    </div>
-
-    <div class="blog-card">
-      <h3>How to Install AWS Q Developer CLI on Ubuntu</h3>
-      <div class="blog-meta">AWS Builder Center</div>
-      <p>Step-by-step guide to install and configure Amazon Q Developer CLI.</p>
-      <a href="https://builder.aws.com/content/2zaNNxWt2oth2OU3jruPDXHV0yu/how-to-install-aws-q-developer-cli-on-ubuntu" target="_blank">Read Full Article</a>
-    </div>
-
-    <div class="blog-card">
-      <h3>AWS Lambda Managed Instances</h3>
-      <div class="blog-meta">AWS Builder Center</div>
-      <p>Serverless simplicity combined with EC2-level flexibility.</p>
-      <a href="https://builder.aws.com/content/36mcL38srRqb766rd4FTD7vF9w2/aws-lambda-managed-instances-serverless-simplicity-with-ec2-level-flexibility" target="_blank">Read Full Article</a>
-    </div>
-
   </div>
 </div>
 
@@ -292,8 +324,7 @@
     <h1 style="text-align:center;">Talks & Presentations</h1>
 
     <p class="talk-description">
-      I enjoy speaking about engineering & career growth and have spoken at multiple companies and conferences.
-      If you want to organise a talk, drop me an email at
+      If you want to organise a talk, email me at
       <a href="mailto:amanpatel.itofficial@gmail.com">amanpatel.itofficial@gmail.com</a>.
     </p>
 

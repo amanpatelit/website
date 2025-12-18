@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
   <title>Aman Patel — DevOps & Cloud Engineer</title>
   <link rel="icon" href="https://cdn.amansdlc.com/aiwithaman.png"/>
@@ -21,12 +21,6 @@
       justify-content:space-between;
       align-items:center;
       padding:24px 64px;
-      position:relative;
-    }
-
-    header nav{
-      display:flex;
-      align-items:center;
     }
 
     header nav a{
@@ -42,21 +36,6 @@
       color:#c0392b;
     }
 
-    /* ---------- HAMBURGER ---------- */
-    .hamburger{
-      display:none;
-      flex-direction:column;
-      gap:6px;
-      cursor:pointer;
-    }
-
-    .hamburger span{
-      width:26px;
-      height:3px;
-      background:#1f1f1f;
-      border-radius:3px;
-    }
-
     /* ---------- COMMON ---------- */
     .container{
       max-width:1200px;
@@ -70,7 +49,7 @@
     /* ---------- HERO ---------- */
     .hero{
       display:grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns:1.2fr 0.8fr;
       gap:60px;
       align-items:start;
     }
@@ -125,9 +104,9 @@
       font-size:15px;
     }
 
-    /* ---------- IMAGE CARD ---------- */
+    /* ---------- IMAGE ---------- */
     .hero-image{
-      background:#ffffff;
+      background:#fff;
       border-radius:22px;
       padding:26px;
       box-shadow:0 8px 30px rgba(0,0,0,0.06);
@@ -138,7 +117,7 @@
       border-radius:18px;
     }
 
-    /* ---------- BLOGS ---------- */
+    /* ---------- BLOG ---------- */
     .section-title{
       font-size:32px;
       margin:80px 0 24px;
@@ -146,23 +125,15 @@
     }
 
     .blog-card{
-      background:#ffffff;
+      background:#fff;
       border:1px solid #e3dbcf;
       border-radius:16px;
       padding:28px;
       margin-bottom:26px;
     }
 
-    .blog-card h3{
-      margin:0;
-      font-size:22px;
-    }
-
-    .blog-meta{
-      margin-top:6px;
-      font-size:15px;
-      color:#666;
-    }
+    .blog-card h3{margin:0;font-size:22px;}
+    .blog-meta{margin-top:6px;font-size:15px;color:#666;}
 
     .blog-card p{
       margin-top:14px;
@@ -179,7 +150,6 @@
       border-radius:10px;
       text-decoration:none;
       font-weight:600;
-      font-size:15px;
     }
 
     /* ---------- TALKS ---------- */
@@ -210,49 +180,22 @@
       .container{padding:20px;}
       .hero{grid-template-columns:1fr;}
       h1{font-size:44px;}
-
-      nav{
-        position:absolute;
-        top:70px;
-        right:20px;
-        background:#ffffff;
-        border:1px solid #e3dbcf;
-        border-radius:14px;
-        padding:16px 20px;
-        display:none;
-        flex-direction:column;
-        gap:16px;
-        box-shadow:0 10px 30px rgba(0,0,0,0.08);
-      }
-
-      nav.show{
-        display:flex;
-      }
-
-      nav a{
-        margin:0;
-      }
-
-      .hamburger{
-        display:flex;
-      }
     }
   </style>
 
   <script>
     function showPage(id){
-      document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+      document.querySelectorAll('.page').forEach(p =>
+        p.classList.remove('active')
+      );
       document.getElementById(id).classList.add('active');
 
-      document.querySelectorAll('nav a[data-page]').forEach(a=>a.classList.remove('active'));
-      document.querySelector(`[data-page="${id}"]`).classList.add('active');
+      document.querySelectorAll('nav a[data-page]').forEach(a =>
+        a.classList.remove('active')
+      );
+      document.querySelector(`nav a[data-page="${id}"]`).classList.add('active');
 
-      document.getElementById('mobileNav').classList.remove('show');
-      window.scrollTo({top:0,behavior:'smooth'});
-    }
-
-    function toggleMenu(){
-      document.getElementById('mobileNav').classList.toggle('show');
+      window.scrollTo({ top:0, behavior:'smooth' });
     }
   </script>
 </head>
@@ -261,24 +204,16 @@
 
 <header>
   <div style="font-weight:700;font-size:22px;">Aman Patel</div>
-
-  <div class="hamburger" onclick="toggleMenu()">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-
-  <nav id="mobileNav">
+  <nav>
     <a data-page="home" class="active" onclick="showPage('home')">Home</a>
     <a href="https://amannewsletter.substack.com/" target="_blank">Newsletters</a>
     <a data-page="talks" onclick="showPage('talks')">Talks</a>
   </nav>
 </header>
 
-<!-- ================= HOME ================= -->
+<!-- HOME -->
 <div id="home" class="page active">
   <div class="container">
-
     <section class="hero">
       <div>
         <h1>Hey, I am Aman</h1>
@@ -295,18 +230,13 @@
           observability stacks, and cloud security.
         </p>
 
-        <p>
-          I share my learnings through blogs, YouTube content, open-source projects,
-          and community talks as an <strong>AWS Community Builder</strong>.
-        </p>
-
         <p class="follow-text">Follow me here for new updates</p>
 
         <div class="socials">
           <a href="https://www.youtube.com/@techwithamanpatel" target="_blank">▶ YouTube</a>
-          <a href="https://amannewsletter.substack.com" target="_blank">📰 Newsletter</a>
-          <a href="https://www.linkedin.com/in/amanpatelofficial/" target="_blank">in LinkedIn</a>
-          <a href="https://github.com/amanpatelit" target="_blank">🐙 GitHub</a>
+          <a href="https://amannewsletter.substack.com" target="_blank">📰 News</a>
+          <a href="https://www.linkedin.com/in/amanpatelofficial/" target="_blank">LinkedIn</a>
+          <a href="https://github.com/amanpatelit" target="_blank">GitHub</a>
         </div>
       </div>
 
@@ -314,17 +244,17 @@
         <img src="https://cdn.amansdlc.com/aiwithaman.png" alt="Aman illustration">
       </div>
     </section>
-
   </div>
 </div>
 
-<!-- ================= TALKS ================= -->
+<!-- TALKS -->
 <div id="talks" class="page">
   <div class="container">
     <h1 style="text-align:center;">Talks & Presentations</h1>
 
     <p class="talk-description">
-      If you want to organise a talk, email me at
+      I enjoy speaking about engineering & career growth and have spoken at multiple
+      companies and conferences. If you want to organise a talk, drop me an email at
       <a href="mailto:amanpatel.itofficial@gmail.com">amanpatel.itofficial@gmail.com</a>.
     </p>
 

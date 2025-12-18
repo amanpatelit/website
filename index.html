@@ -110,8 +110,31 @@
     /* ---------- BLOG ---------- */
     .section-title{
       font-size:32px;
-      margin:80px 0 24px;
+      margin:80px 0 16px;
       font-weight:700;
+    }
+
+    /* ---------- FILTER ---------- */
+    .filters{
+      display:flex;
+      gap:12px;
+      margin-bottom:32px;
+      flex-wrap:wrap;
+    }
+
+    .filters button{
+      padding:8px 16px;
+      border-radius:20px;
+      border:1px solid #ded6ca;
+      background:#f1eadf;
+      font-weight:600;
+      cursor:pointer;
+    }
+
+    .filters button.active{
+      background:#c0392b;
+      color:#fff;
+      border-color:#c0392b;
     }
 
     .blog-card{
@@ -191,6 +214,17 @@
 
       window.scrollTo({top:0,behavior:'smooth'});
     }
+
+    function filterBlogs(category, btn){
+      document.querySelectorAll('.filters button').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+
+      document.querySelectorAll('.blog-card').forEach(card=>{
+        card.style.display =
+          category === 'all' || card.dataset.category === category
+          ? 'block' : 'none';
+      });
+    }
   </script>
 </head>
 
@@ -227,7 +261,6 @@
 
         <div class="socials">
           <a href="https://www.youtube.com/@techwithamanpatel" target="_blank">▶ YouTube</a>
-          <a href="https://twitter.com/" target="_blank">🐦 Twitter</a>
           <a href="https://www.linkedin.com/in/amanpatelofficial/" target="_blank">LinkedIn</a>
           <a href="https://github.com/amanpatelit" target="_blank">GitHub</a>
         </div>
@@ -241,40 +274,39 @@
     <!-- FEATURED BLOGS -->
     <h2 class="section-title">Featured Blogs</h2>
 
-    <!-- Blog 1 -->
-    <div class="blog-card">
+    <!-- FILTER -->
+    <div class="filters">
+      <button class="active" onclick="filterBlogs('all',this)">All</button>
+      <button onclick="filterBlogs('aws',this)">AWS</button>
+      <button onclick="filterBlogs('devops',this)">DevOps</button>
+      <button onclick="filterBlogs('serverless',this)">Serverless</button>
+    </div>
+
+    <!-- BLOG 1 -->
+    <div class="blog-card" data-category="aws">
       <h3>How to Become an AWS Community Builder in 2026</h3>
-      <div class="blog-meta">By Aman Patel on AWS Builder Center</div>
-      <p>
-        A complete guide covering eligibility, benefits, selection criteria,
-        and how to prepare for the AWS Community Builder program.
-      </p>
+      <div class="blog-meta">AWS • Community</div>
+      <p>A complete guide to becoming an AWS Community Builder.</p>
       <a href="https://builder.aws.com/content/36PZz34pdR59WVLoxYZp79gOJCq/how-to-become-an-aws-community-builder-in-2026" target="_blank">
         Read Full Article
       </a>
     </div>
 
-    <!-- Blog 2 -->
-    <div class="blog-card">
+    <!-- BLOG 2 -->
+    <div class="blog-card" data-category="devops">
       <h3>How to Install AWS Q Developer CLI on Ubuntu</h3>
-      <div class="blog-meta">By Aman Patel on AWS Builder Center</div>
-      <p>
-        Step-by-step guide to install and configure Amazon Q Developer CLI
-        on Ubuntu for cloud-native development workflows.
-      </p>
+      <div class="blog-meta">DevOps • Tooling</div>
+      <p>Step-by-step guide to install AWS Q Developer CLI on Ubuntu.</p>
       <a href="https://builder.aws.com/content/2zaNNxWt2oth2OU3jruPDXHV0yu/how-to-install-aws-q-developer-cli-on-ubuntu" target="_blank">
         Read Full Article
       </a>
     </div>
 
-    <!-- Blog 3 -->
-    <div class="blog-card">
+    <!-- BLOG 3 -->
+    <div class="blog-card" data-category="serverless">
       <h3>AWS Lambda Managed Instances</h3>
-      <div class="blog-meta">By Aman Patel on AWS Builder Center</div>
-      <p>
-        Learn how AWS Lambda Managed Instances combine serverless simplicity
-        with EC2-level control and flexibility.
-      </p>
+      <div class="blog-meta">Serverless • AWS</div>
+      <p>Serverless simplicity combined with EC2-level flexibility.</p>
       <a href="https://builder.aws.com/content/36mcL38srRqb766rd4FTD7vF9w2/aws-lambda-managed-instances-serverless-simplicity-with-ec2-level-flexibility" target="_blank">
         Read Full Article
       </a>

@@ -4,7 +4,7 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-  <title>Aman Patel Sr.DevSecOps & Cloud Engineer</title>
+  <title>Aman Patel — Sr. DevSecOps & Cloud Engineer</title>
   <link rel="icon" href="https://cdn.amansdlc.com/aiwithaman.png"/>
 
   <style>
@@ -13,6 +13,31 @@
       font-family: ui-serif, Georgia, serif;
       background:#f7f0e6;
       color:#1f1f1f;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    /* ------------------ ANIMATIONS ------------------ */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     /* ---------- HEADER ---------- */
@@ -29,6 +54,7 @@
       font-weight:600;
       color:#1f1f1f;
       cursor:pointer;
+      transition: color 0.3s ease;
     }
 
     header nav a.active,
@@ -36,7 +62,7 @@
       color:#c0392b;
     }
 
-    /* ---------- COMMON ---------- */
+    /* ---------- LAYOUT ---------- */
     .container{
       max-width:1200px;
       margin:auto;
@@ -58,6 +84,9 @@
       font-size:56px;
       margin:0;
       font-weight:700;
+      opacity:0;
+      transform:translateY(20px);
+      animation: slideUp 0.8s ease forwards;
     }
 
     .tagline{
@@ -66,6 +95,10 @@
       color:#c0392b;
       font-style:italic;
       font-weight:600;
+      opacity:0;
+      transform:translateY(20px);
+      animation: slideUp 0.8s ease forwards;
+      animation-delay:0.2s;
     }
 
     .hero p{
@@ -73,7 +106,14 @@
       line-height:1.7;
       margin-top:22px;
       max-width:640px;
+      opacity:0;
+      transform:translateY(20px);
+      animation: slideUp 0.8s ease forwards;
     }
+
+    .hero p:nth-of-type(1){ animation-delay:0.4s; }
+    .hero p:nth-of-type(2){ animation-delay:0.6s; }
+    .hero p:nth-of-type(3){ animation-delay:0.8s; }
 
     /* ---------- SOCIAL ---------- */
     .socials{
@@ -92,6 +132,12 @@
       color:#1f1f1f;
       font-weight:600;
       font-size:15px;
+      transition: all 0.25s ease;
+    }
+
+    .socials a:hover{
+      transform: translateY(-4px) scale(1.03);
+      box-shadow:0 8px 18px rgba(0,0,0,0.12);
     }
 
     /* ---------- IMAGE ---------- */
@@ -105,6 +151,11 @@
     .hero-image img{
       width:100%;
       border-radius:18px;
+      transition: transform 0.5s ease;
+    }
+
+    .hero-image:hover img{
+      transform: scale(1.03);
     }
 
     /* ---------- BLOG ---------- */
@@ -114,7 +165,6 @@
       font-weight:700;
     }
 
-    /* ---------- FILTER ---------- */
     .filters{
       display:flex;
       gap:12px;
@@ -129,9 +179,11 @@
       background:#f1eadf;
       font-weight:600;
       cursor:pointer;
+      transition: all 0.25s ease;
     }
 
-    .filters button.active{
+    .filters button.active,
+    .filters button:hover{
       background:#c0392b;
       color:#fff;
       border-color:#c0392b;
@@ -143,24 +195,17 @@
       border-radius:16px;
       padding:28px;
       margin-bottom:26px;
+      transition: all 0.3s ease;
     }
 
-    .blog-card h3{
-      margin:0;
-      font-size:22px;
+    .blog-card:hover{
+      transform: translateY(-6px);
+      box-shadow:0 12px 28px rgba(0,0,0,0.08);
     }
 
-    .blog-meta{
-      margin-top:6px;
-      font-size:15px;
-      color:#666;
-    }
-
-    .blog-card p{
-      margin-top:14px;
-      font-size:17px;
-      line-height:1.6;
-    }
+    .blog-card h3{margin:0;font-size:22px;}
+    .blog-meta{margin-top:6px;font-size:15px;color:#666;}
+    .blog-card p{margin-top:14px;font-size:17px;line-height:1.6;}
 
     .blog-card a{
       display:inline-block;
@@ -173,32 +218,10 @@
       font-weight:600;
     }
 
-    /* ---------- TALKS ---------- */
-    .talk-description{
-      max-width:820px;
-      margin:30px auto;
-      text-align:center;
-      font-size:18px;
-      line-height:1.7;
-    }
-
-    .talk-image{
-      width:100%;
-      max-width:780px;
-      border-radius:20px;
-      display:block;
-      margin:40px auto;
-    }
-
-    .caption{
-      text-align:center;
-      opacity:0.7;
-    }
-
     /* ---------- FOOTER ---------- */
     footer{
-      background: #f8fafc;
-      border-top: 1px solid #e2e8f0;
+      background:#f8fafc;
+      border-top:1px solid #e2e8f0;
       padding:48px 0 24px;
       margin-top:80px;
     }
@@ -213,44 +236,25 @@
     }
 
     .footer-section h3{
-      margin:0 0 16px 0;
+      margin-bottom:16px;
       font-size:16px;
-      color:#111827;
-      font-weight: 600;
-    }
-
-    .footer-section p{
-      color:#6b7280;
-      line-height:1.6;
-      margin:0 0 16px 0;
-      font-size:14px;
+      font-weight:600;
     }
 
     .footer-section a{
+      display:block;
+      margin:6px 0;
       color:#6b7280;
       text-decoration:none;
-      line-height:1.8;
-      margin:4px 0;
-      display:block;
-      transition: color 0.2s ease;
-      font-size:14px;
     }
 
-    .footer-section a:hover{
-      color:#2563eb;
-    }
+    .footer-section a:hover{color:#2563eb;}
 
     .footer-bottom{
-      border-top:1px solid #e2e8f0;
-      margin-top:32px;
-      padding-top:24px;
       text-align:center;
-    }
-
-    .footer-bottom p{
-      margin:0;
+      margin-top:32px;
       color:#6b7280;
-      font-size: 14px;
+      font-size:14px;
     }
 
     /* ---------- RESPONSIVE ---------- */
@@ -266,10 +270,6 @@
     function showPage(id){
       document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
       document.getElementById(id).classList.add('active');
-
-      document.querySelectorAll('nav a[data-page]').forEach(a=>a.classList.remove('active'));
-      document.querySelector(`nav a[data-page="${id}"]`).classList.add('active');
-
       window.scrollTo({top:0,behavior:'smooth'});
     }
 
@@ -284,11 +284,16 @@
       });
     }
 
-    // Auto-update copyright year
-    document.addEventListener('DOMContentLoaded', function() {
-      const currentYear = new Date().getFullYear();
-      document.getElementById('current-year').textContent = currentYear;
-    });
+    function revealOnScroll(){
+      document.querySelectorAll('.reveal').forEach(el=>{
+        if(el.getBoundingClientRect().top < window.innerHeight - 100){
+          el.classList.add('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
   </script>
 </head>
 
@@ -303,33 +308,18 @@
   </nav>
 </header>
 
-<!-- ================= HOME ================= -->
+<!-- HOME -->
 <div id="home" class="page active">
   <div class="container">
 
-    <section class="hero">
+    <section class="hero reveal">
       <div>
         <h1>Hey, I am Aman</h1>
         <div class="tagline">curious, tinkerer, and explorer</div>
 
-        <p>
-          I am a Senior DevOps & Cloud Engineer with 5+ years of experience architecting and implementing 
-          enterprise-scale cloud infrastructure solutions. I specialize in designing resilient, highly-available 
-          systems using Kubernetes orchestration, advanced automation frameworks, sophisticated CI/CD pipelines, 
-          and production-grade distributed architectures that serve millions of users.
-        </p>
-
-        <p>
-          My expertise spans multi-cloud environments (AWS, GCP, Azure), infrastructure-as-code, 
-          observability at scale, and security-first DevOps practices. I lead cross-functional teams 
-          in digital transformation initiatives and mentor engineers in cloud-native technologies.
-        </p>
-
-        <p>
-          As an <strong>AWS Community Builder</strong>, I share advanced technical insights through 
-          comprehensive blog articles, in-depth YouTube tutorials, enterprise-grade open-source projects, 
-          and thought leadership at industry conferences, contributing to the global cloud engineering community.
-        </p>
+        <p>I am a Senior DevOps & Cloud Engineer with 5+ years of experience designing scalable systems.</p>
+        <p>I specialize in Kubernetes, CI/CD, cloud security, and platform engineering.</p>
+        <p>AWS Community Builder sharing real-world engineering insights.</p>
 
         <div class="socials">
           <a href="https://www.youtube.com/@techwithamanpatel" target="_blank">▶ YouTube</a>
@@ -339,12 +329,11 @@
       </div>
 
       <div class="hero-image">
-        <img src="https://cdn.amansdlc.com/aiwithaman.png" alt="Aman illustration">
+        <img src="https://cdn.amansdlc.com/aiwithaman.png" alt="Aman Patel">
       </div>
     </section>
 
-    <!-- FEATURED blog -->
-    <h2 class="section-title">Featured blog</h2>
+    <h2 class="section-title reveal">Featured Blogs</h2>
 
     <div class="filters">
       <button class="active" onclick="filterblog('all',this)">All</button>
@@ -353,84 +342,71 @@
       <button onclick="filterblog('serverless',this)">Serverless</button>
     </div>
 
-    <div class="blog-card" data-category="aws">
-      <h3>How to Become an AWS Community Builder in 2026</h3>
-      <div class="blog-meta">AWS • Community</div>
-      <p>A complete guide to becoming an AWS Community Builder.</p>
-      <a href="https://builder.aws.com/content/36PZz34pdR59WVLoxYZp79gOJCq/how-to-become-an-aws-community-builder-in-2026" target="_blank">
-        Read Full Article
-      </a>
+    <div class="blog-card reveal" data-category="aws">
+      <h3>How to Become an AWS Community Builder</h3>
+      <p>A complete guide to building impact in the AWS ecosystem.</p>
+      <a href="#" target="_blank">Read Article</a>
     </div>
 
-    <div class="blog-card" data-category="devops">
-      <h3>How to Install AWS Q Developer CLI on Ubuntu</h3>
-      <div class="blog-meta">DevOps • Tooling</div>
-      <p>Step-by-step guide to install AWS Q Developer CLI on Ubuntu.</p>
-      <a href="https://builder.aws.com/content/2zaNNxWt2oth2OU3jruPDXHV0yu/how-to-install-aws-q-developer-cli-on-ubuntu" target="_blank">
-        Read Full Article
-      </a>
+    <div class="blog-card reveal" data-category="devops">
+      <h3>Installing AWS Q Developer CLI</h3>
+      <p>Step-by-step guide to getting started with AWS Q.</p>
+      <a href="#" target="_blank">Read Article</a>
     </div>
 
-    <div class="blog-card" data-category="serverless">
+    <div class="blog-card reveal" data-category="serverless">
       <h3>AWS Lambda Managed Instances</h3>
-      <div class="blog-meta">Serverless • AWS</div>
-      <p>Serverless simplicity combined with EC2-level flexibility.</p>
-      <a href="https://builder.aws.com/content/36mcL38srRqb766rd4FTD7vF9w2/aws-lambda-managed-instances-serverless-simplicity-with-ec2-level-flexibility" target="_blank">
-        Read Full Article
-      </a>
+      <p>Combining serverless simplicity with EC2 power.</p>
+      <a href="#" target="_blank">Read Article</a>
     </div>
 
   </div>
 </div>
 
-<!-- ================= TALKS ================= -->
+<!-- TALKS -->
 <div id="talks" class="page">
   <div class="container">
-    <h1 style="text-align:center;">Talks & Presentations</h1>
+    <h1 class="reveal" style="text-align:center;">Talks & Presentations</h1>
 
-    <p class="talk-description">
-      I enjoy speaking about engineering and career growth and have spoken at multiple
-      companies and conferences. If you would like to organise a talk, feel free to
-      reach out at
-      <a href="mailto:amanpatel.itofficial@gmail.com">amanpatel.itofficial@gmail.com</a>.
+    <p class="reveal" style="text-align:center;">
+      I speak about cloud engineering, DevOps, and career growth.
+      Reach out at <a href="mailto:amanpatel.itofficial@gmail.com">amanpatel.itofficial@gmail.com</a>
     </p>
 
-    <img src="https://cdn.amansdlc.com/AIwithDevOpsTalks.png" class="talk-image">
-    <p class="caption">Aman — Community Session</p>
-
-    <img src="https://cdn.amansdlc.com/CNCF.png" class="talk-image">
-    <p class="caption">CNCF Webinar — Official Invitation</p>
+    <img class="talk-image reveal" src="https://cdn.amansdlc.com/AIwithDevOpsTalks.png">
+    <img class="talk-image reveal" src="https://cdn.amansdlc.com/CNCF.png">
   </div>
 </div>
 
-<!-- ================= FOOTER ================= -->
 <footer>
   <div class="footer-content">
     <div class="footer-section">
       <h3>About</h3>
-      <p>Senior DevOps & Cloud Engineer passionate about scalable infrastructure, Kubernetes, and cloud technologies. AWS Community Builder sharing knowledge through content and talks.</p>
+      <p>Senior DevOps & Cloud Engineer helping teams scale securely.</p>
     </div>
-    
+
     <div class="footer-section">
       <h3>Resources</h3>
-      <a href="https://amannewsletter.substack.com/" target="_blank">Newsletter</a>
-      <a href="https://www.youtube.com/@techwithamanpatel" target="_blank">YouTube Channel</a>
-      <a href="https://github.com/amanpatelit" target="_blank">GitHub Projects</a>
-      <a href="https://builder.aws.com/profile/amanpatel" target="_blank">AWS Builder Articles</a>
+      <a href="https://amannewsletter.substack.com/">Newsletter</a>
+      <a href="https://github.com/amanpatelit">GitHub</a>
+      <a href="https://builder.aws.com/profile/amanpatel">AWS Builder</a>
     </div>
-    
+
     <div class="footer-section">
       <h3>Connect</h3>
-      <a href="https://www.linkedin.com/in/amanpatelofficial/" target="_blank">LinkedIn</a>
-      <a href="mailto:amanpatel.itofficial@gmail.com">Contact Me</a>
-      <a href="#" onclick="showPage('talks')">Speaking Engagements</a>
+      <a href="https://www.linkedin.com/in/amanpatelofficial/">LinkedIn</a>
+      <a href="mailto:amanpatel.itofficial@gmail.com">Email</a>
     </div>
   </div>
-  
+
   <div class="footer-bottom">
-    <p>&copy; <span id="current-year"></span> Aman Patel. All rights reserved.</p>
+    <p>© <span id="year"></span> Aman Patel. All rights reserved.</p>
   </div>
 </footer>
+
+<script>
+  document.getElementById("year").innerText = new Date().getFullYear();
+</script>
 
 </body>
 </html>

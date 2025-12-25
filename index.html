@@ -4,7 +4,7 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-  <title>Aman Patel — Sr. DevSecOps & Cloud Engineer</title>
+  <title>Aman Patel Sr.DevSecOps & Cloud Engineer</title>
   <link rel="icon" href="https://cdn.amansdlc.com/aiwithaman.png"/>
 
   <style>
@@ -13,31 +13,6 @@
       font-family: ui-serif, Georgia, serif;
       background:#f7f0e6;
       color:#1f1f1f;
-      animation: fadeIn 0.8s ease-in-out;
-    }
-
-    /* ------------------ ANIMATIONS ------------------ */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes slideUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.8s ease;
-    }
-
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
     }
 
     /* ---------- HEADER ---------- */
@@ -54,7 +29,6 @@
       font-weight:600;
       color:#1f1f1f;
       cursor:pointer;
-      transition: color 0.3s ease;
     }
 
     header nav a.active,
@@ -62,7 +36,7 @@
       color:#c0392b;
     }
 
-    /* ---------- LAYOUT ---------- */
+    /* ---------- COMMON ---------- */
     .container{
       max-width:1200px;
       margin:auto;
@@ -84,9 +58,6 @@
       font-size:56px;
       margin:0;
       font-weight:700;
-      opacity:0;
-      transform:translateY(20px);
-      animation: slideUp 0.8s ease forwards;
     }
 
     .tagline{
@@ -95,10 +66,6 @@
       color:#c0392b;
       font-style:italic;
       font-weight:600;
-      opacity:0;
-      transform:translateY(20px);
-      animation: slideUp 0.8s ease forwards;
-      animation-delay:0.2s;
     }
 
     .hero p{
@@ -106,16 +73,9 @@
       line-height:1.7;
       margin-top:22px;
       max-width:640px;
-      opacity:0;
-      transform:translateY(20px);
-      animation: slideUp 0.8s ease forwards;
     }
 
-    .hero p:nth-of-type(1){ animation-delay:0.4s; }
-    .hero p:nth-of-type(2){ animation-delay:0.6s; }
-    .hero p:nth-of-type(3){ animation-delay:0.8s; }
-
-    /* ---------- SOCIAL ---------- */
+    /* ---------- SOCIAL (ANIMATED) ---------- */
     .socials{
       margin-top:26px;
       display:flex;
@@ -124,6 +84,7 @@
     }
 
     .socials a{
+      position: relative;
       padding:10px 16px;
       border-radius:12px;
       background:#f1eadf;
@@ -132,12 +93,43 @@
       color:#1f1f1f;
       font-weight:600;
       font-size:15px;
-      transition: all 0.25s ease;
+      overflow:hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+      animation: float 4s ease-in-out infinite;
     }
 
+    .socials a:nth-child(2){ animation-delay: 0.3s; }
+    .socials a:nth-child(3){ animation-delay: 0.6s; }
+
     .socials a:hover{
-      transform: translateY(-4px) scale(1.03);
-      box-shadow:0 8px 18px rgba(0,0,0,0.12);
+      transform: translateY(-6px) scale(1.05);
+      background: linear-gradient(135deg, #c0392b, #e74c3c);
+      color: #fff;
+      box-shadow: 0 12px 25px rgba(192,57,43,0.25);
+    }
+
+    .socials a::after{
+      content:"";
+      position:absolute;
+      width:120%;
+      height:120%;
+      top:50%;
+      left:50%;
+      background:rgba(255,255,255,0.25);
+      border-radius:50%;
+      transform:translate(-50%, -50%) scale(0);
+      transition:transform 0.5s ease;
+    }
+
+    .socials a:hover::after{
+      transform:translate(-50%, -50%) scale(1);
+      opacity:0;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-3px); }
+      100% { transform: translateY(0); }
     }
 
     /* ---------- IMAGE ---------- */
@@ -151,11 +143,6 @@
     .hero-image img{
       width:100%;
       border-radius:18px;
-      transition: transform 0.5s ease;
-    }
-
-    .hero-image:hover img{
-      transform: scale(1.03);
     }
 
     /* ---------- BLOG ---------- */
@@ -179,11 +166,9 @@
       background:#f1eadf;
       font-weight:600;
       cursor:pointer;
-      transition: all 0.25s ease;
     }
 
-    .filters button.active,
-    .filters button:hover{
+    .filters button.active{
       background:#c0392b;
       color:#fff;
       border-color:#c0392b;
@@ -195,12 +180,6 @@
       border-radius:16px;
       padding:28px;
       margin-bottom:26px;
-      transition: all 0.3s ease;
-    }
-
-    .blog-card:hover{
-      transform: translateY(-6px);
-      box-shadow:0 12px 28px rgba(0,0,0,0.08);
     }
 
     .blog-card h3{margin:0;font-size:22px;}
@@ -236,28 +215,31 @@
     }
 
     .footer-section h3{
-      margin-bottom:16px;
+      margin:0 0 16px 0;
       font-size:16px;
       font-weight:600;
     }
 
     .footer-section a{
       display:block;
-      margin:6px 0;
       color:#6b7280;
       text-decoration:none;
+      margin:6px 0;
     }
 
-    .footer-section a:hover{color:#2563eb;}
+    .footer-section a:hover{
+      color:#2563eb;
+    }
 
     .footer-bottom{
       text-align:center;
+      border-top:1px solid #e2e8f0;
       margin-top:32px;
-      color:#6b7280;
+      padding-top:24px;
       font-size:14px;
+      color:#6b7280;
     }
 
-    /* ---------- RESPONSIVE ---------- */
     @media(max-width:900px){
       header{padding:20px;}
       .container{padding:20px;}
@@ -265,36 +247,6 @@
       h1{font-size:44px;}
     }
   </style>
-
-  <script>
-    function showPage(id){
-      document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
-      window.scrollTo({top:0,behavior:'smooth'});
-    }
-
-    function filterblog(category, btn){
-      document.querySelectorAll('.filters button').forEach(b=>b.classList.remove('active'));
-      btn.classList.add('active');
-
-      document.querySelectorAll('.blog-card').forEach(card=>{
-        card.style.display =
-          category === 'all' || card.dataset.category === category
-          ? 'block' : 'none';
-      });
-    }
-
-    function revealOnScroll(){
-      document.querySelectorAll('.reveal').forEach(el=>{
-        if(el.getBoundingClientRect().top < window.innerHeight - 100){
-          el.classList.add('active');
-        }
-      });
-    }
-
-    window.addEventListener('scroll', revealOnScroll);
-    window.addEventListener('load', revealOnScroll);
-  </script>
 </head>
 
 <body>
@@ -312,12 +264,12 @@
 <div id="home" class="page active">
   <div class="container">
 
-    <section class="hero reveal">
+    <section class="hero">
       <div>
         <h1>Hey, I am Aman</h1>
         <div class="tagline">curious, tinkerer, and explorer</div>
 
-        <p>I am a Senior DevOps & Cloud Engineer with 5+ years of experience designing scalable systems.</p>
+        <p>I am a Senior DevOps & Cloud Engineer with 5+ years of experience architecting scalable cloud platforms.</p>
         <p>I specialize in Kubernetes, CI/CD, cloud security, and platform engineering.</p>
         <p>AWS Community Builder sharing real-world engineering insights.</p>
 
@@ -329,11 +281,11 @@
       </div>
 
       <div class="hero-image">
-        <img src="https://cdn.amansdlc.com/aiwithaman.png" alt="Aman Patel">
+        <img src="https://cdn.amansdlc.com/aiwithaman.png" alt="Aman illustration">
       </div>
     </section>
 
-    <h2 class="section-title reveal">Featured Blogs</h2>
+    <h2 class="section-title">Featured blog</h2>
 
     <div class="filters">
       <button class="active" onclick="filterblog('all',this)">All</button>
@@ -342,70 +294,21 @@
       <button onclick="filterblog('serverless',this)">Serverless</button>
     </div>
 
-    <div class="blog-card reveal" data-category="aws">
+    <div class="blog-card" data-category="aws">
       <h3>How to Become an AWS Community Builder</h3>
-      <p>A complete guide to building impact in the AWS ecosystem.</p>
-      <a href="#" target="_blank">Read Article</a>
-    </div>
-
-    <div class="blog-card reveal" data-category="devops">
-      <h3>Installing AWS Q Developer CLI</h3>
-      <p>Step-by-step guide to getting started with AWS Q.</p>
-      <a href="#" target="_blank">Read Article</a>
-    </div>
-
-    <div class="blog-card reveal" data-category="serverless">
-      <h3>AWS Lambda Managed Instances</h3>
-      <p>Combining serverless simplicity with EC2 power.</p>
-      <a href="#" target="_blank">Read Article</a>
+      <p>A complete guide to becoming an AWS Community Builder.</p>
+      <a href="#">Read Article</a>
     </div>
 
   </div>
 </div>
-
-<!-- TALKS -->
-<div id="talks" class="page">
-  <div class="container">
-    <h1 class="reveal" style="text-align:center;">Talks & Presentations</h1>
-
-    <p class="reveal" style="text-align:center;">
-      I speak about cloud engineering, DevOps, and career growth.
-      Reach out at <a href="mailto:amanpatel.itofficial@gmail.com">amanpatel.itofficial@gmail.com</a>
-    </p>
-
-    <img class="talk-image reveal" src="https://cdn.amansdlc.com/AIwithDevOpsTalks.png">
-    <img class="talk-image reveal" src="https://cdn.amansdlc.com/CNCF.png">
-  </div>
-</div>
-
-<footer>
-  <div class="footer-content">
-    <div class="footer-section">
-      <h3>About</h3>
-      <p>Senior DevOps & Cloud Engineer helping teams scale securely.</p>
-    </div>
-
-    <div class="footer-section">
-      <h3>Resources</h3>
-      <a href="https://amannewsletter.substack.com/">Newsletter</a>
-      <a href="https://github.com/amanpatelit">GitHub</a>
-      <a href="https://builder.aws.com/profile/amanpatel">AWS Builder</a>
-    </div>
-
-    <div class="footer-section">
-      <h3>Connect</h3>
-      <a href="https://www.linkedin.com/in/amanpatelofficial/">LinkedIn</a>
-      <a href="mailto:amanpatel.itofficial@gmail.com">Email</a>
-    </div>
-  </div>
-
-  <div class="footer-bottom">
-    <p>© <span id="year"></span> Aman Patel. All rights reserved.</p>
-  </div>
-</footer>
 
 <script>
-  document.getElementById("year").innerText = new Date().getFullYear();
+  function showPage(id){
+    document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
 </script>
 
 </body>
